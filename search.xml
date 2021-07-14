@@ -258,26 +258,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>函数</title>
-    <url>/2021/06/29/%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<p>(1)锁定行和列：f4+enter</p>
-<p>(2)结束公式: ctrl+shift+enter</p>
-<h2 id="一、查找引用函数"><a href="#一、查找引用函数" class="headerlink" title="一、查找引用函数"></a><font color=green>一、查找引用函数</font></h2><h3 id="1-Vlookup"><a href="#1-Vlookup" class="headerlink" title="1.Vlookup"></a><font color=brown>1.Vlookup</font></h3><h4 id="Vlookup-查找值-查找范围-查找第几列-true-false"><a href="#Vlookup-查找值-查找范围-查找第几列-true-false" class="headerlink" title="Vlookup(查找值,查找范围,查找第几列,true/false)"></a><font color=blue>Vlookup(查找值,查找范围,查找第几列,true/false)</font></h4><h5 id="查找值必须在区域第一列。"><a href="#查找值必须在区域第一列。" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h3 id="2-offset"><a href="#2-offset" class="headerlink" title="2.offset"></a><font color=brown>2.offset</font></h3><h5 id="返回单元格或区域，并可以指定返回的行或列数，"><a href="#返回单元格或区域，并可以指定返回的行或列数，" class="headerlink" title="返回单元格或区域，并可以指定返回的行或列数，"></a>返回单元格或区域，并可以指定返回的行或列数，</h5><h4 id="offset-基点-行偏rows-列偏-行数-列数"><a href="#offset-基点-行偏rows-列偏-行数-列数" class="headerlink" title="offset(基点,行偏rows,列偏,行数,列数)"></a><font color=blue>offset(基点,行偏rows,列偏,行数,列数)</font></h4><h5 id="1-左-上-为负-2-row-•2-3"><a href="#1-左-上-为负-2-row-•2-3" class="headerlink" title="(1)左 上 为负    (2)row()•2-3"></a>(1)左 上 为负    (2)row()•2-3</h5><h3 id="3-match"><a href="#3-match" class="headerlink" title="3.match"></a><font color=brown>3.match</font></h3><h5 id="返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）"><a href="#返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）" class="headerlink" title="返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）"></a>返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）</h5><h4 id="match-查找的内容-查找范围-是否精确1-0-1"><a href="#match-查找的内容-查找范围-是否精确1-0-1" class="headerlink" title="match(查找的内容,查找范围,是否精确1/0/-1)"></a><font color=blue>match(查找的内容,查找范围,是否精确1/0/-1)</font></h4><h5 id="1-查找范围是相对的。-2-只能进行单行-单列查找。"><a href="#1-查找范围是相对的。-2-只能进行单行-单列查找。" class="headerlink" title="(1)查找范围是相对的。    (2)只能进行单行/单列查找。"></a>(1)查找范围是相对的。    (2)只能进行单行/单列查找。</h5><h3 id="4-index"><a href="#4-index" class="headerlink" title="4.index"></a><font color=brown>4.index</font></h3><h5 id="通过一个相对的位置，返回值。（第二行第1列是小张）"><a href="#通过一个相对的位置，返回值。（第二行第1列是小张）" class="headerlink" title="通过一个相对的位置，返回值。（第二行第1列是小张）"></a>通过一个相对的位置，返回值。（第二行第1列是小张）</h5><h4 id="index-查找范围-查找行位置-查找列位置"><a href="#index-查找范围-查找行位置-查找列位置" class="headerlink" title="index(查找范围,查找行位置,查找列位置)"></a><font color=blue>index(查找范围,查找行位置,查找列位置)</font></h4><h5 id="查找值必须在区域第一列。-1"><a href="#查找值必须在区域第一列。-1" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h2 id="二、文本函数"><a href="#二、文本函数" class="headerlink" title="二、文本函数"></a><font color=green>二、文本函数</font></h2><h3 id="1-left"><a href="#1-left" class="headerlink" title="1.left"></a><font color=brown>1.left</font></h3><h5 id="从文本第1个字符开始返回指定个数的字符。"><a href="#从文本第1个字符开始返回指定个数的字符。" class="headerlink" title="从文本第1个字符开始返回指定个数的字符。"></a>从文本第1个字符开始返回指定个数的字符。</h5><h4 id="left-text-个数"><a href="#left-text-个数" class="headerlink" title="left(text,个数)"></a><font color=blue>left(text,个数)</font></h4><h5 id="函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。"><a href="#函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。" class="headerlink" title="函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。"></a>函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。</h5><h3 id="2-mid"><a href="#2-mid" class="headerlink" title="2.mid"></a><font color=brown>2.mid</font></h3><h5 id="返回从指定位置开始的特定个数字符。"><a href="#返回从指定位置开始的特定个数字符。" class="headerlink" title="返回从指定位置开始的特定个数字符。"></a>返回从指定位置开始的特定个数字符。</h5><h4 id="mid-text-start-num-个数"><a href="#mid-text-start-num-个数" class="headerlink" title="mid(text,start_num,个数)"></a><font color=blue>mid(text,start_num,个数)</font></h4>]]></content>
-  </entry>
-  <entry>
-    <title>增值税政策</title>
-    <url>/2021/07/12/%E5%A2%9E%E5%80%BC%E7%A8%8E%E6%94%BF%E7%AD%96/</url>
-    <content><![CDATA[<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5163917/content.html">1.先进制造业申请退还增量留抵税额</a></p>
-<p>①销售额占全部销售额的比重超过50%的纳税人。<br>②取得增值税留抵退税款的，不得再申请享受增值税即征即退、先征后返（退）政策。</p>
-<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5163184/content.html">2.延续宣传文化增值税优惠政策</a></p>
-<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5162926/content.html">3.小规模纳税人免征增值税问题</a><br>15万元</p>
-<p><a href="http://www.chinatax.gov.cn/chinatax/n810341/n810825/c101434/c5162954/content.html">4.《税务行政处罚“首违不罚”事项清单》</a></p>
-<p><a href="http://www.chinatax.gov.cn/chinatax/n810341/n810760/c5166026/content.html">5.研发机构采购国产设备增值税退税管理办法</a></p>
-<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5162053/content.html">6.海南自由贸易港自用生产设备“零关税”政策</a></p>
-<p>7.社保基金</p>
-]]></content>
-  </entry>
-  <entry>
     <title>税务会计001</title>
     <url>/2021/07/11/%E7%A8%8E%E5%8A%A1/</url>
     <content><![CDATA[<p>1、山东升润食品有限公司为什么注销？</p>
@@ -378,14 +358,34 @@
 <h5 id="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"><a href="#一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。" class="headerlink" title="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"></a>一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。</h5><h5 id="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"><a href="#二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。" class="headerlink" title="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"></a>二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。</h5><h5 id="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"><a href="#三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。" class="headerlink" title="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"></a>三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。</h5><h5 id="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"><a href="#四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。" class="headerlink" title="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"></a>四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。</h5><h5 id="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"><a href="#五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。" class="headerlink" title="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"></a>五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。</h5><h5 id="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"><a href="#六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。" class="headerlink" title="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"></a>六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。</h5>]]></content>
   </entry>
   <entry>
-    <title>财务工作001</title>
-    <url>/2021/07/11/%E8%B4%A2%E5%8A%A1%E5%B7%A5%E4%BD%9C001/</url>
-    <content><![CDATA[<p><a href="https://www.toutiao.com/i6981734189892977163/">1.备注栏填写</a></p>
+    <title>增值税政策</title>
+    <url>/2021/07/12/%E5%A2%9E%E5%80%BC%E7%A8%8E%E6%94%BF%E7%AD%96/</url>
+    <content><![CDATA[<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5163917/content.html">1.先进制造业申请退还增量留抵税额</a></p>
+<p>①销售额占全部销售额的比重超过50%的纳税人。<br>②取得增值税留抵退税款的，不得再申请享受增值税即征即退、先征后返（退）政策。</p>
+<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5163184/content.html">2.延续宣传文化增值税优惠政策</a></p>
+<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5162926/content.html">3.小规模纳税人免征增值税问题</a><br>15万元</p>
+<p><a href="http://www.chinatax.gov.cn/chinatax/n810341/n810825/c101434/c5162954/content.html">4.《税务行政处罚“首违不罚”事项清单》</a></p>
+<p><a href="http://www.chinatax.gov.cn/chinatax/n810341/n810760/c5166026/content.html">5.研发机构采购国产设备增值税退税管理办法</a></p>
+<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5162053/content.html">6.海南自由贸易港自用生产设备“零关税”政策</a></p>
+<p>7.社保基金</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>函数</title>
+    <url>/2021/06/29/%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<p>(1)锁定行和列：f4+enter</p>
+<p>(2)结束公式: ctrl+shift+enter</p>
+<h2 id="一、查找引用函数"><a href="#一、查找引用函数" class="headerlink" title="一、查找引用函数"></a><font color=green>一、查找引用函数</font></h2><h3 id="1-Vlookup"><a href="#1-Vlookup" class="headerlink" title="1.Vlookup"></a><font color=brown>1.Vlookup</font></h3><h4 id="Vlookup-查找值-查找范围-查找第几列-true-false"><a href="#Vlookup-查找值-查找范围-查找第几列-true-false" class="headerlink" title="Vlookup(查找值,查找范围,查找第几列,true/false)"></a><font color=blue>Vlookup(查找值,查找范围,查找第几列,true/false)</font></h4><h5 id="查找值必须在区域第一列。"><a href="#查找值必须在区域第一列。" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h3 id="2-offset"><a href="#2-offset" class="headerlink" title="2.offset"></a><font color=brown>2.offset</font></h3><h5 id="返回单元格或区域，并可以指定返回的行或列数，"><a href="#返回单元格或区域，并可以指定返回的行或列数，" class="headerlink" title="返回单元格或区域，并可以指定返回的行或列数，"></a>返回单元格或区域，并可以指定返回的行或列数，</h5><h4 id="offset-基点-行偏rows-列偏-行数-列数"><a href="#offset-基点-行偏rows-列偏-行数-列数" class="headerlink" title="offset(基点,行偏rows,列偏,行数,列数)"></a><font color=blue>offset(基点,行偏rows,列偏,行数,列数)</font></h4><h5 id="1-左-上-为负-2-row-•2-3"><a href="#1-左-上-为负-2-row-•2-3" class="headerlink" title="(1)左 上 为负    (2)row()•2-3"></a>(1)左 上 为负    (2)row()•2-3</h5><h3 id="3-match"><a href="#3-match" class="headerlink" title="3.match"></a><font color=brown>3.match</font></h3><h5 id="返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）"><a href="#返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）" class="headerlink" title="返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）"></a>返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）</h5><h4 id="match-查找的内容-查找范围-是否精确1-0-1"><a href="#match-查找的内容-查找范围-是否精确1-0-1" class="headerlink" title="match(查找的内容,查找范围,是否精确1/0/-1)"></a><font color=blue>match(查找的内容,查找范围,是否精确1/0/-1)</font></h4><h5 id="1-查找范围是相对的。-2-只能进行单行-单列查找。"><a href="#1-查找范围是相对的。-2-只能进行单行-单列查找。" class="headerlink" title="(1)查找范围是相对的。    (2)只能进行单行/单列查找。"></a>(1)查找范围是相对的。    (2)只能进行单行/单列查找。</h5><h3 id="4-index"><a href="#4-index" class="headerlink" title="4.index"></a><font color=brown>4.index</font></h3><h5 id="通过一个相对的位置，返回值。（第二行第1列是小张）"><a href="#通过一个相对的位置，返回值。（第二行第1列是小张）" class="headerlink" title="通过一个相对的位置，返回值。（第二行第1列是小张）"></a>通过一个相对的位置，返回值。（第二行第1列是小张）</h5><h4 id="index-查找范围-查找行位置-查找列位置"><a href="#index-查找范围-查找行位置-查找列位置" class="headerlink" title="index(查找范围,查找行位置,查找列位置)"></a><font color=blue>index(查找范围,查找行位置,查找列位置)</font></h4><h5 id="查找值必须在区域第一列。-1"><a href="#查找值必须在区域第一列。-1" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h2 id="二、文本函数"><a href="#二、文本函数" class="headerlink" title="二、文本函数"></a><font color=green>二、文本函数</font></h2><h3 id="1-left"><a href="#1-left" class="headerlink" title="1.left"></a><font color=brown>1.left</font></h3><h5 id="从文本第1个字符开始返回指定个数的字符。"><a href="#从文本第1个字符开始返回指定个数的字符。" class="headerlink" title="从文本第1个字符开始返回指定个数的字符。"></a>从文本第1个字符开始返回指定个数的字符。</h5><h4 id="left-text-个数"><a href="#left-text-个数" class="headerlink" title="left(text,个数)"></a><font color=blue>left(text,个数)</font></h4><h5 id="函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。"><a href="#函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。" class="headerlink" title="函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。"></a>函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。</h5><h3 id="2-mid"><a href="#2-mid" class="headerlink" title="2.mid"></a><font color=brown>2.mid</font></h3><h5 id="返回从指定位置开始的特定个数字符。"><a href="#返回从指定位置开始的特定个数字符。" class="headerlink" title="返回从指定位置开始的特定个数字符。"></a>返回从指定位置开始的特定个数字符。</h5><h4 id="mid-text-start-num-个数"><a href="#mid-text-start-num-个数" class="headerlink" title="mid(text,start_num,个数)"></a><font color=blue>mid(text,start_num,个数)</font></h4>]]></content>
   </entry>
   <entry>
     <title>资源分享</title>
     <url>/2021/06/25/%E8%B5%84%E6%BA%90/</url>
     <content><![CDATA[<h3 id="1-颜色代码"><a href="#1-颜色代码" class="headerlink" title="1.颜色代码"></a><a href="http://www.mgzxzs.com/sytool/se.htm" title="RGB颜色查询对照表">1.颜色代码</a></h3><h3 id="2-影视推榜"><a href="#2-影视推榜" class="headerlink" title="2.影视推榜"></a><a href="http://data.guduodata.com/" title="骨朵数据">2.影视推榜</a></h3>]]></content>
+  </entry>
+  <entry>
+    <title>财务工作001</title>
+    <url>/2021/07/11/%E8%B4%A2%E5%8A%A1%E5%B7%A5%E4%BD%9C001/</url>
+    <content><![CDATA[<p><a href="https://www.toutiao.com/i6981734189892977163/">1.备注栏填写</a></p>
+]]></content>
   </entry>
 </search>
