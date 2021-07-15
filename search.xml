@@ -1,6 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>win10建立博客</title>
+    <url>/2021/06/25/win10%E5%8D%9A%E5%AE%A2%E5%88%B6%E4%BD%9C/</url>
+    <content><![CDATA[<h6 id="建议安装markdownpad写博客文章"><a href="#建议安装markdownpad写博客文章" class="headerlink" title="建议安装markdownpad写博客文章"></a><em>建议安装markdownpad写博客文章</em></h6><hr>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="1-安装Nodejs"><a href="#1-安装Nodejs" class="headerlink" title="1.安装Nodejs"></a>1.安装Nodejs</h3><p><em><strong>win+R输入cmd</strong></em></p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- node -v <span class="comment">#查看node版本</span></span><br><span class="line">- <span class="built_in">npm</span> -v <span class="comment">#查看npm版本</span></span><br><span class="line">- <span class="built_in">npm</span> install -g cnpm--registry=http://registry.<span class="built_in">npm</span>.taobao.org <span class="comment">#安装淘宝的cnpm管理器</span></span><br><span class="line">- cnpm -v <span class="comment">#查看cnpm版本</span></span><br><span class="line">- cnpm install -g hexo-cli <span class="comment">#安装hexo框架</span></span><br><span class="line">- hexo -v <span class="comment">#查看hexo版本</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><h3 id="2-之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）"><a href="#2-之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）" class="headerlink" title="2.之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）"></a>2.之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）</h3><p><em><strong>cmd里进入你想保存blog的位置（方便找）</strong></em></p>
+<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> md blog <span class="comment">#创建blog目录</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> cd blog <span class="comment">#进入blog目录</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo init <span class="comment">#生成博客并初始化</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo s <span class="comment">#启动本地博客服务</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
+
+<p><em>回应本地访问地址（复制到浏览器打开）:<a href="http://localhost:4000/">http://localhost:4000/</a></em></p>
+<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line">-<span class="ruby"> hexo n <span class="string">&quot;我的博客&quot;</span> <span class="comment">#创建新的文章</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo clean <span class="comment">#清理缓存</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo g <span class="comment">#生成创建仓库</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> cnpm install --save hexo-deployer-git <span class="comment">#在blog目录下安装git部署插件</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-配置＿config-yml"><a href="#3-配置＿config-yml" class="headerlink" title="3.配置＿config.yml"></a>3.配置＿config.yml</h3><p><em><strong>用记事本打开blog-＿config文件</strong></em></p>
+<p><em><strong>最底部找到deployment，写入</strong></em></p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>type: git</span><br><span class="line"><span class="bullet">- </span>repo: http://(远程端地址）</span><br><span class="line"><span class="bullet">- </span>branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>补充：</p>
+<h6 id="远程端地址的设置"><a href="#远程端地址的设置" class="headerlink" title="远程端地址的设置"></a>远程端地址的设置</h6><ol>
+<li>打开<a href="https://github.com/">https://github.com/</a></li>
+<li>注册登录，注意：Username是之后你的博客地址的构成之一（这里以qiqiguaiguaideyingbaobei为例）</li>
+<li>点右上角加号，new repository(新建仓库qiqiguaiguaideyingbaobei.github.io)</li>
+<li>跳出页面显示地址<a href="https://github.com/qiqiguaiguaideyingbaobei/qiqiguaiguaideyingbaobei.github.io">https://github.com/qiqiguaiguaideyingbaobei/qiqiguaiguaideyingbaobei.github.io</a></li>
+<li>地址需要用到，先放一边，继续下一步操作</li>
+</ol>
+<hr>
+<h3 id="4-回到cmd"><a href="#4-回到cmd" class="headerlink" title="4.回到cmd"></a>4.回到cmd</h3><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> hexo d <span class="comment">#部署到Gittub仓库里</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
+<p>首次部署会自动跳出界面，输入密码。</p>
+<h4 id="这里出错"><a href="#这里出错" class="headerlink" title="这里出错"></a>这里出错</h4><p>自行百度</p>
+<p><em><strong>访问http://即可查看博客</strong></em> </p>
+<hr>
+<h3 id="5-主题变更"><a href="#5-主题变更" class="headerlink" title="5.主题变更"></a>5.主题变更</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- git clone http:<span class="regexp">//gi</span>thub.com<span class="regexp">/litten/</span>hexo-theme-yilia.git themes/yilia <span class="comment">#下载yilia主题到本地</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="这一步出错-范例"><a href="#这一步出错-范例" class="headerlink" title="这一步出错(范例)"></a>这一步出错(范例)</h4><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">Connection was reset, errno 10054</span><br><span class="line"><span class="keyword">error: </span>1457 bytes of body are still expected</span><br><span class="line">fetch-pack: unexpected disconnect while reading sideband packet</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: fetch-pack: invalid index-pack output</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h6><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">git config http.sslVerify <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果返回，</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">fatal: <span class="keyword">not</span> <span class="keyword">in</span> <span class="keyword">a</span> git <span class="built_in">directory</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>接着输入，</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="keyword">init</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">git config http.sslVerify <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后重新clone即可。</p>
+<hr>
+<h3 id="6-修改hexo根目录下的＿config文件"><a href="#6-修改hexo根目录下的＿config文件" class="headerlink" title="6.修改hexo根目录下的＿config文件"></a>6.修改hexo根目录下的＿config文件</h3><p>找到theme，</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>theme: yilia</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> hexo c <span class="comment">#清理</span></span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line">-<span class="ruby"> hexo g <span class="comment">#生成</span></span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line">-<span class="ruby"> hexo s <span class="comment">#生成本地页面（可跳过）</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
+
+<p>ctrl+c退出</p>
+<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> hexo d <span class="comment">#部署到远端</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
+<h4 id="hexo-d-出错"><a href="#hexo-d-出错" class="headerlink" title="hexo d 出错"></a>hexo d 出错</h4><p> ①<a href="http://https//blog.csdn.net/weixin_41256398/article/details/117994899">Hexo部署出现错误err: Error: Spawn failed解决方式</a><br>    ———-</p>
+<h3 id="7-查看博客"><a href="#7-查看博客" class="headerlink" title="7.查看博客"></a>7.<a href="https://qiqiguaiguaideyingbaobei.github.io/">查看博客</a></h3><p><a href="https://qiqiguaiguaideyingbaobei.github.io/">https://qiqiguaiguaideyingbaobei.github.io</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>科技创新类企业所得税优惠</title>
+    <url>/2021/07/14/%E4%BC%81%E4%B8%9A%E6%89%80%E5%BE%97%E7%A8%8E/</url>
+    <content><![CDATA[<p><img src="https://p3-tt.byteimg.com/origin/pgc-image/SYiDjH1COaBOQH?from=pc"></p>
+<h2 id="01-研究开发费用企业所得税"><a href="#01-研究开发费用企业所得税" class="headerlink" title="01 研究开发费用企业所得税"></a>01 研究开发费用企业所得税</h2><p><em>企业为开发新技术、新产品、新工艺</em>发生的研究开发费用,未形成无形资产计入当期损益的，在按照规定据实扣除的基础上，按照研究开发费用的<em>50％</em>加计扣除；形成无形资产的，按照无形资产成本<em>150％摊销</em>。</p>
+<p>在2018年1月1日至2023年12月31日期间，按照<em>实际发生额的75%<em>在税前加计扣除；形成无形资产的，在上述期间按照无形资产</em>成本的175%在税前摊销</em>。</p>
+<p><em>制造业企业</em>开展研发活动中实际发生的研发费用，未形成无形资产计入当期损益的，在按规定据实扣除的基础上，自2021年1月1日起，再按照<em>实际发生额的100%<em>在税前加计扣除，形成无形资产的，自2021年1月1日起，按照无形资产</em>成本的200%在税前摊销</em>。</p>
+<p>企业预缴申报2021年第3季度（按季预缴）或9月（按月预缴）企业所得税时，可以自行选择就当年上半年研发费用享受加计扣除优惠政策。</p>
+<h2 id="02-企业委托研究开发费用"><a href="#02-企业委托研究开发费用" class="headerlink" title="02 企业委托研究开发费用"></a>02 企业委托研究开发费用</h2><ol>
+<li>企业委托<em>境内</em>外部机构或个人进行研发活动所发生的费用，按照费用*实际发生额的80%*计入委托方研发费用并计算加计扣除，受托方不得再进行加计扣除。</li>
+<li>委托<em>境外</em>进行研发活动所发生的费用，按照费用实际<em>发生额的80%<em>计入委托方的委托境外研发费用。委托境外研发费用**境内符合条件的研发费用</em>三分之二的</em>部分，可以按规定在企业所得税前加计扣除。</li>
+</ol>
+<h2 id="03-国家重点扶持的高新技术企业"><a href="#03-国家重点扶持的高新技术企业" class="headerlink" title="03 国家重点扶持的高新技术企业"></a>03 国家重点扶持的高新技术企业</h2><p>减按15%的税率征收企业所得税</p>
+<h2 id="04-经认定为技术先进型服务企业"><a href="#04-经认定为技术先进型服务企业" class="headerlink" title="04 经认定为技术先进型服务企业"></a>04 经认定为技术先进型服务企业</h2><p>减按15%的税率征收企业所得税</p>
+<h2 id="05-服务贸易类技术先进型服务企业"><a href="#05-服务贸易类技术先进型服务企业" class="headerlink" title="05 服务贸易类技术先进型服务企业"></a>05 服务贸易类技术先进型服务企业</h2><p>减按15%的税率征收企业所得税</p>
+<h2 id="06-软件产业所得税优惠"><a href="#06-软件产业所得税优惠" class="headerlink" title="06 软件产业所得税优惠"></a>06 软件产业所得税优惠</h2><p>1.国家鼓励的<em>软件企业</em>,自获利年度起,第一年至第二年<em>免征</em>企业所得税,第三年至第五年按照*25%*的法定税率减半征收企业所得税。</p>
+<p>2.国家鼓励的<em>重点集成电路设计企业和软件企业</em>,自获利年度起,第一年至第五年<em>免征</em>企业所得税,接续年度减按*10%*的税率征收企业所得税。</p>
+<p>3.符合条件的软件企业的<em>职工培训费用</em>，应单独进行核算并按实际发生额在计算应纳税所得额时扣除。</p>
+<p>4.符合条件的软件企业按照《财政部国家税务总局关于软件产品增值税政策的通知》（财税〔2011〕100号）规定取得的<em>即征即退</em>增值税款，由企业专项用于软件产品研发和扩大再生产并单独进行核算，可以作为<em>不征税收入</em>，在计算应纳税所得额时从收入总额中减除。</p>
+<p>5.外购的软件，凡符合固定资产或无形资产确认条件的，可以按照固定资产或无形资产进行核算，其<em>折旧或摊销年限</em>可以适当缩短，最短可为<em>2年（含）</em>。</p>
+<h2 id="07-集成电路产业所得税优惠"><a href="#07-集成电路产业所得税优惠" class="headerlink" title="07 集成电路产业所得税优惠"></a>07 集成电路产业所得税优惠</h2><p>1.2020年1月1日起，国家鼓励的集成电路线宽小于28纳米（含），且经营期在15年以上的集成电路生产企业或项目，第一年至第十年<em>免征</em>企业所得税；国家鼓励的集成电路线宽小于65纳米（含），且经营期在15年以上的集成电路生产企业或项目，第一年至第五年<em>免征</em>企业所得税，第六年至第十年按照<em>25%<em>的法定税率</em>减半</em>征收企业所得税；国家鼓励的集成电路线宽小于130纳米（含），且经营期在10年以上的集成电路生产企业或项目，第一年至第二年<em>免征</em>企业所得税，第三年至第五年按照*25%*的法定税率减半征收企业所得税。</p>
+<p>2.2020年1月1日起，国家鼓励的线宽小于130纳米（含）的集成电路生产企业，属于国家鼓励的集成电路生产企业清单年度之前5个纳税年度发生的尚未弥补完的亏损，准予向以后年度结转，<em>总结转年限最长不得超过10年</em>。</p>
+<p>3.2020年1月1日起，国家鼓励的集成电路设计、装备、材料、封装、测试企业，自获利年度起，第一年至第二年<em>免征</em>企业所得税，第三年至第五年按照*25%*的法定税率减半征收企业所得税。</p>
+<p>4.2020年1月1日起，国家鼓励的重点集成电路设计企业，自获利年度起，第一年至第五年<em>免征</em>企业所得税，接续年度减按*10%*的税率征收企业所得税。</p>
+<p>5.集成电路设计企业<em>职工培训费用</em>，应单独进行核算并按实际发生额在计算应纳税所得额时扣除。</p>
+<p>6.外购的软件，凡符合固定资产或无形资产确认条件的，可以按照固定资产或无形资产进行核算，其折旧或摊销年限可以适当缩短，<em>最短可为2年（含）。</em></p>
+<p>7.集成电路生产企业的生产设备，其折旧年限可以适当缩短，<em>最短可为3年（含）</em>。</p>
+<h2 id="08-符合条件的动漫企业享受国家现行鼓励"><a href="#08-符合条件的动漫企业享受国家现行鼓励" class="headerlink" title="08 符合条件的动漫企业享受国家现行鼓励"></a>08 符合条件的动漫企业享受国家现行鼓励</h2><p>在2017年12月31日前自获利年度起，第一年至第二年<em>免征</em>企业所得税，第三年至第五年按照*25%*的法定税率减半征收企业所得税，并享受至期满为止。</p>
+<h2 id="09-高新技术企业或科技型中小企业"><a href="#09-高新技术企业或科技型中小企业" class="headerlink" title="09 高新技术企业或科技型中小企业"></a>09 高新技术企业或科技型中小企业</h2><p>弥补亏损年限延长至10年</p>
+<h2 id="10-技术转让所得免征、减征企业所得税"><a href="#10-技术转让所得免征、减征企业所得税" class="headerlink" title="10 技术转让所得免征、减征企业所得税"></a>10 技术转让所得免征、减征企业所得税</h2><p>居民企业转让<em>5年（含）以上</em>非独占许可使用权取得的技术转让所得，纳入享受企业所得税优惠的技术转让所得范围。居民企业的年度技术转让所得不超过500万元的部分，<em>免征</em>企业所得税；超过500万元的部分，<em>减半</em>征收企业所得税。</p>
+<h2 id="11-符合条件的非营利组织（科技企业孵化器）"><a href="#11-符合条件的非营利组织（科技企业孵化器）" class="headerlink" title="11 符合条件的非营利组织（科技企业孵化器）"></a>11 符合条件的非营利组织（科技企业孵化器）</h2><p>收入免征企业所得税</p>
+<h2 id="12-创业投资企业按投资额的一定比例抵扣应纳税所得额"><a href="#12-创业投资企业按投资额的一定比例抵扣应纳税所得额" class="headerlink" title="12 创业投资企业按投资额的一定比例抵扣应纳税所得额"></a>12 创业投资企业按投资额的一定比例抵扣应纳税所得额</h2><p>1.<em>创业投资企业</em>采取股权投资方式投资于<em>未上市的中小高</em>新技术企业<em>2年以上的</em>，可以按照其投资额的<em>70%<em>在股权持有</em>满2年</em>的当年抵扣该创业投资企业的应纳税所得额；当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
+<p>2.<em>公司制创业投资企业</em>采取股权投资方式直接投资于<em>种子期、初创期</em>科技型企业<em>满2年（24个月）</em>的，可以按照投资额的<em>70%<em>在股权持有</em>满2年</em>的当年抵扣该公司制创业投资企业的应纳税所得额；当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
+<p>3.<em>有限合伙制创业投资企业</em>采取股权投资方式投资于<em>未上市的中小高</em>新技术企业<em>2年（24个月）以上</em>，该有限合伙制创业投资企业的法人合伙人可按照其对未上市中小高新技术企业投资额的*70%*抵扣该法人合伙人从该有限合伙制创业投资企业分得的应纳税所得额，当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
+<p>4.<em>有限合伙制创业投资企业</em>采取股权投资方式直接投资于<em>种子期、初创期</em>科技型企业<em>满2年的</em>，该合伙创投企业的法人合伙人可以按照对种子期、初创期科技型企业投资额的*70%*抵扣法人合伙人从有限合伙制创业投资企业分得的所得；当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
+<h2 id="13-企业以技术成果投资入股递延纳税"><a href="#13-企业以技术成果投资入股递延纳税" class="headerlink" title="13 企业以技术成果投资入股递延纳税"></a>13 企业以技术成果投资入股递延纳税</h2><p>可选择适用递延纳税优惠政策。</p>
+<p><em>技术成果投资入股</em>，是指纳税人将技术成果所有权让渡给被投资企业、取得该企业股票（权）的行为。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>函数</title>
+    <url>/2021/06/29/%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<p>(1)锁定行和列：f4+enter</p>
+<p>(2)结束公式: ctrl+shift+enter</p>
+<h2 id="一、查找引用函数"><a href="#一、查找引用函数" class="headerlink" title="一、查找引用函数"></a><font color=green>一、查找引用函数</font></h2><h3 id="1-Vlookup"><a href="#1-Vlookup" class="headerlink" title="1.Vlookup"></a><font color=brown>1.Vlookup</font></h3><h4 id="Vlookup-查找值-查找范围-查找第几列-true-false"><a href="#Vlookup-查找值-查找范围-查找第几列-true-false" class="headerlink" title="Vlookup(查找值,查找范围,查找第几列,true/false)"></a><font color=blue>Vlookup(查找值,查找范围,查找第几列,true/false)</font></h4><h5 id="查找值必须在区域第一列。"><a href="#查找值必须在区域第一列。" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h3 id="2-offset"><a href="#2-offset" class="headerlink" title="2.offset"></a><font color=brown>2.offset</font></h3><h5 id="返回单元格或区域，并可以指定返回的行或列数，"><a href="#返回单元格或区域，并可以指定返回的行或列数，" class="headerlink" title="返回单元格或区域，并可以指定返回的行或列数，"></a>返回单元格或区域，并可以指定返回的行或列数，</h5><h4 id="offset-基点-行偏rows-列偏-行数-列数"><a href="#offset-基点-行偏rows-列偏-行数-列数" class="headerlink" title="offset(基点,行偏rows,列偏,行数,列数)"></a><font color=blue>offset(基点,行偏rows,列偏,行数,列数)</font></h4><h5 id="1-左-上-为负-2-row-•2-3"><a href="#1-左-上-为负-2-row-•2-3" class="headerlink" title="(1)左 上 为负    (2)row()•2-3"></a>(1)左 上 为负    (2)row()•2-3</h5><h3 id="3-match"><a href="#3-match" class="headerlink" title="3.match"></a><font color=brown>3.match</font></h3><h5 id="返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）"><a href="#返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）" class="headerlink" title="返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）"></a>返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）</h5><h4 id="match-查找的内容-查找范围-是否精确1-0-1"><a href="#match-查找的内容-查找范围-是否精确1-0-1" class="headerlink" title="match(查找的内容,查找范围,是否精确1/0/-1)"></a><font color=blue>match(查找的内容,查找范围,是否精确1/0/-1)</font></h4><h5 id="1-查找范围是相对的。-2-只能进行单行-单列查找。"><a href="#1-查找范围是相对的。-2-只能进行单行-单列查找。" class="headerlink" title="(1)查找范围是相对的。    (2)只能进行单行/单列查找。"></a>(1)查找范围是相对的。    (2)只能进行单行/单列查找。</h5><h3 id="4-index"><a href="#4-index" class="headerlink" title="4.index"></a><font color=brown>4.index</font></h3><h5 id="通过一个相对的位置，返回值。（第二行第1列是小张）"><a href="#通过一个相对的位置，返回值。（第二行第1列是小张）" class="headerlink" title="通过一个相对的位置，返回值。（第二行第1列是小张）"></a>通过一个相对的位置，返回值。（第二行第1列是小张）</h5><h4 id="index-查找范围-查找行位置-查找列位置"><a href="#index-查找范围-查找行位置-查找列位置" class="headerlink" title="index(查找范围,查找行位置,查找列位置)"></a><font color=blue>index(查找范围,查找行位置,查找列位置)</font></h4><h5 id="查找值必须在区域第一列。-1"><a href="#查找值必须在区域第一列。-1" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h2 id="二、文本函数"><a href="#二、文本函数" class="headerlink" title="二、文本函数"></a><font color=green>二、文本函数</font></h2><h3 id="1-left"><a href="#1-left" class="headerlink" title="1.left"></a><font color=brown>1.left</font></h3><h5 id="从文本第1个字符开始返回指定个数的字符。"><a href="#从文本第1个字符开始返回指定个数的字符。" class="headerlink" title="从文本第1个字符开始返回指定个数的字符。"></a>从文本第1个字符开始返回指定个数的字符。</h5><h4 id="left-text-个数"><a href="#left-text-个数" class="headerlink" title="left(text,个数)"></a><font color=blue>left(text,个数)</font></h4><h5 id="函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。"><a href="#函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。" class="headerlink" title="函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。"></a>函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。</h5><h3 id="2-mid"><a href="#2-mid" class="headerlink" title="2.mid"></a><font color=brown>2.mid</font></h3><h5 id="返回从指定位置开始的特定个数字符。"><a href="#返回从指定位置开始的特定个数字符。" class="headerlink" title="返回从指定位置开始的特定个数字符。"></a>返回从指定位置开始的特定个数字符。</h5><h4 id="mid-text-start-num-个数"><a href="#mid-text-start-num-个数" class="headerlink" title="mid(text,start_num,个数)"></a><font color=blue>mid(text,start_num,个数)</font></h4>]]></content>
+  </entry>
+  <entry>
+    <title>税务会计001</title>
+    <url>/2021/07/11/%E7%A8%8E%E5%8A%A1/</url>
+    <content><![CDATA[<p>1、山东升润食品有限公司为什么注销？</p>
+<h3 id="税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。"><a href="#税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。" class="headerlink" title="税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。"></a>税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。</h3><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><h4 id="1-税费核算及纳税申报"><a href="#1-税费核算及纳税申报" class="headerlink" title="1.税费核算及纳税申报"></a>1.税费核算及纳税申报</h4><h4 id="2-账目的合法合规检查"><a href="#2-账目的合法合规检查" class="headerlink" title="2.账目的合法合规检查"></a>2.账目的合法合规检查</h4><h4 id="3-应对税务需求及检查"><a href="#3-应对税务需求及检查" class="headerlink" title="3.应对税务需求及检查"></a>3.应对税务需求及检查</h4><h3 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h3><h4 id="1-会计处理、税收法规"><a href="#1-会计处理、税收法规" class="headerlink" title="1.会计处理、税收法规"></a>1.会计处理、税收法规</h4><h4 id="2-税收法规结合、会计实务应用"><a href="#2-税收法规结合、会计实务应用" class="headerlink" title="2.税收法规结合、会计实务应用"></a>2.税收法规结合、会计实务应用</h4><h3 id="企业信息"><a href="#企业信息" class="headerlink" title="企业信息"></a>企业信息</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">1</span>.公司名称：山东京博控股集团有限公司</span><br><span class="line"></span><br><span class="line"><span class="attribute">2</span>.法定代表人：马韵升</span><br><span class="line"></span><br><span class="line"><span class="attribute">3</span>.纳税人登记号：<span class="number">9137000077527826</span>X<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">4</span>.纳税人身份：一般纳税人</span><br><span class="line"></span><br><span class="line"><span class="attribute">5</span>.公司类型：其他有限责任公司</span><br><span class="line"></span><br><span class="line"><span class="attribute">6</span>.经营范围：本企业内部资本运营和资产管理；发电、供热（有效期限以许可证为准）；电力销售；机电安装、房屋建筑、钢结构、化工石油设备管道的制作和安装工程；城镇工业供水、水处理技术咨询服务；建筑材料、大豆、大米、皮棉、棉籽、短绒、办公用品、日用百货、木材、印刷品、通讯器材、电脑及耗材、化工原料（不含化学危险品、不含监控化学危险品、不含易制毒化学危险品）、有色金属、浆板、文化用纸、高分子材料、压延涂镀精密金属薄板、沥青、燃料油（不含危险品）销售；建筑材料生产及销售；机械设备、机电设备、通用五金、劳保用品、实验室玻璃器皿、阀门管件、仪器仪表、办公电器、消防器材、电子产品、通讯设备、商用厨具的采购、销售、仓储、委托管理、网上销售、技术服务、安装维修、代理服务;电子商务;化工助剂的采购、销售、代理服务(以上不含危险品)。（依法须经批准的项目，经相关部门批准后方可开展经营活动）(不得从事本地产业政策禁止和限制类项目的经营活动)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="税务会计相关工作"><a href="#税务会计相关工作" class="headerlink" title="税务会计相关工作"></a>税务会计相关工作</h3><h4 id="1-购买发票"><a href="#1-购买发票" class="headerlink" title="1.购买发票"></a>1.购买发票</h4><h5 id="（1）纸质发票和电子信息-报税盘和金税盘、营业执照"><a href="#（1）纸质发票和电子信息-报税盘和金税盘、营业执照" class="headerlink" title="（1）纸质发票和电子信息[报税盘和金税盘、营业执照]"></a>（1）纸质发票和电子信息[报税盘和金税盘、营业执照]</h5><h5 id="（1）将信息读入到开票软件"><a href="#（1）将信息读入到开票软件" class="headerlink" title="（1）将信息读入到开票软件"></a>（1）将信息读入到开票软件</h5><h4 id="2-开具发票"><a href="#2-开具发票" class="headerlink" title="2.开具发票"></a>2.开具发票</h4><h5 id="（1）开票软件中发票填开"><a href="#（1）开票软件中发票填开" class="headerlink" title="（1）开票软件中发票填开"></a>（1）开票软件中发票填开</h5><h5 id="（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）"><a href="#（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）" class="headerlink" title="（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）"></a>（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）</h5><h4 id="3-印花税核算"><a href="#3-印花税核算" class="headerlink" title="3.印花税核算"></a>3.印花税核算</h4><h5 id="（1）书立、使用、领受印花税法所列示的"><a href="#（1）书立、使用、领受印花税法所列示的" class="headerlink" title="（1）书立、使用、领受印花税法所列示的"></a>（1）书立、使用、领受印花税法所列示的</h5><table>
+<thead>
+<tr>
+<th>税率</th>
+<th>项目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>定额税率5元</td>
+<td><strong>营业账簿</strong>、房屋产权证、工商营业执照、商标注册证、专利证、土地使用证</td>
+</tr>
+<tr>
+<td>0.05‰</td>
+<td>借款合同</td>
+</tr>
+<tr>
+<td>0.3‰</td>
+<td><strong>购销合同</strong>、建筑安装工程承包合同、技术合同</td>
+</tr>
+<tr>
+<td>0.5‰</td>
+<td>加工承揽合同、建筑工程勘察设计合同、货物运输合同、产权转移书据、记载资金的账簿，按实收资本和资本公积的合计金额0.5‰贴花</td>
+</tr>
+<tr>
+<td>1‰</td>
+<td>财产租赁合同、仓储保管合同、财产保险合同</td>
+</tr>
+</tbody></table>
+<h5 id="（1）以购销合同中记载的金额计算"><a href="#（1）以购销合同中记载的金额计算" class="headerlink" title="（1）以购销合同中记载的金额计算"></a>（1）以购销合同中记载的金额计算</h5><h5 id="2）购销合同双方都要交"><a href="#2）购销合同双方都要交" class="headerlink" title="(2）购销合同双方都要交"></a>(2）购销合同双方都要交</h5><table>
+<thead>
+<tr>
+<th>购销合同记载</th>
+<th>计算</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只有不含税金额</td>
+<td>按不含税金额</td>
+</tr>
+<tr>
+<td>不含税金额和增值税分别记载</td>
+<td>按不含税金额</td>
+</tr>
+<tr>
+<td>含税金额</td>
+<td>按含税金额</td>
+</tr>
+</tbody></table>
+<h5 id="（3）印花税的缴纳方法"><a href="#（3）印花税的缴纳方法" class="headerlink" title="（3）印花税的缴纳方法"></a>（3）印花税的缴纳方法</h5><table>
+<thead>
+<tr>
+<th>“三自”缴纳方式</th>
+<th>大额缴款</th>
+<th>汇总缴纳</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>—-</td>
+<td>超过500元，带着合同、公章向当地税务机关申请填写缴款书或完税证，将其中一联粘贴在凭证上或由税务机关在凭证上加注完税标记代替贴花</td>
+<td>同一种类频繁贴花，汇总缴纳期限为一个月，提前15日告知主管税务机关，一个会计年度不能变</td>
+</tr>
+</tbody></table>
+<h4 id="4-专用发票认证（抵扣联）"><a href="#4-专用发票认证（抵扣联）" class="headerlink" title="4.专用发票认证（抵扣联）"></a>4.专用发票认证（抵扣联）</h4><p>进项发票只有通过税务机关认证后才能抵扣。</p>
+<p>尽量早认证。</p>
+<p>2次认证不通过去税务机关。来不及去，当月开的票及时通知销货方在开票系统作废发票。没作废只能下月有销货方开红票冲掉，重新开票。</p>
+<h5 id="（1）网上远程认证系统自行认证"><a href="#（1）网上远程认证系统自行认证" class="headerlink" title="（1）网上远程认证系统自行认证"></a>（1）网上远程认证系统自行认证</h5><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>上传待认证发票文件</span><br><span class="line"><span class="bullet">- </span>认证查询：查询发票认证结果</span><br><span class="line"><span class="bullet">- </span>认证下载：下载认证结果和认证结果通知书</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="2-税务会计在整个认证工作流程"><a href="#2-税务会计在整个认证工作流程" class="headerlink" title="(2)税务会计在整个认证工作流程"></a>(2)税务会计在整个认证工作流程</h5><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>抵扣联认证</span><br><span class="line"><span class="bullet">- </span>月末打印认证结果清单</span><br><span class="line"><span class="bullet">- </span>与材料会计核对当月进项税额</span><br><span class="line"><span class="bullet">- </span>装订抵扣联和认证结果清单</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="（3）需认证的发票"><a href="#（3）需认证的发票" class="headerlink" title="（3）需认证的发票"></a>（3）需认证的发票</h5><p>1.无论是一般纳税人还是小规模纳税人，首次购买的金税盘和技术服务费，这两张票千万不要勾选认证，因为可以全额抵减增值税</p>
+<p>2.一般纳税人从小规模纳税人购买的农产品取得的3%的增值税发票，我们也不要勾选，因为可以按照9%去抵扣增值税，一旦勾选，只能按照3%，相当于100万就可以少交6万</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>增值税专用发票（含税控机动车销售统一发票和中华人民共和国税收通用缴款书）</span><br><span class="line"><span class="bullet">- </span>海关进口增值税专用缴款书</span><br><span class="line"><span class="bullet">- </span>农产品收购发票或销售发票(购货方开的)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="（4）政策动向"><a href="#（4）政策动向" class="headerlink" title="（4）政策动向"></a>（4）政策动向</h5><p>1.合并申报的税种范围包括城镇土地使用税、房产税、车船税、印花税、耕地占用税、资源税（不包括水资源税）、土地增值税、契税、环境保护税、烟叶税。</p>
+<p>城市维护建设税是增值税、消费税的附加税种，将分别与增值税、消费税合并申报，不纳入财产和行为税合并申报范围。</p>
+<p>2.发票认证的取消——信用a级增值税一般纳税人</p>
+<p>3.认证抵扣时间</p>
+<h5 id="（5）认证时考虑的因素"><a href="#（5）认证时考虑的因素" class="headerlink" title="（5）认证时考虑的因素"></a>（5）认证时考虑的因素</h5><p>1.当月购入当月销售，这些发票当月认证</p>
+<p>2.发票是否将要到期</p>
+<p>3.当月缴纳税金金额，增值税税负率</p>
+<figure class="highlight fix"><table><tr><td class="code"><pre><span class="line"><span class="attr"></span></span><br><span class="line"><span class="attr">增值税税负率</span>=<span class="string">当期应纳增值税÷当期应税销售收入</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">当期应纳增值税=当期销项税额-实际抵扣进项税额</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">实际抵扣进项税额=期初留抵进项税额+ 本期进项税额-进项转出-出口退税-期末留抵进项税额</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>实际税负过低，则有可能存在偷漏税问题，会引起税务监管部门的注意；从企业来讲，如果实际税负较高，企业也应该查明原因，加强纳税核算管理，避免不必要的纳税损失。</p>
+<p>其实，税负率低可以有正常理由，比如产品滞销的一些情况，有可能导致税负率低，只要和税务局如实告知就可以解决。</p>
+<p><a href="http://https//www.toutiao.com/a6978764963477324300/?channel=&source=search_tab">一文讲清2021年税负率</a></p>
+<h5 id="6-账不平，过渡科目问题"><a href="#6-账不平，过渡科目问题" class="headerlink" title="(6)账不平，过渡科目问题"></a>(6)账不平，过渡科目问题</h5><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">借：应交税费——待抵扣增值税进项税额</span><br><span class="line">  贷：银行存款</span><br><span class="line"></span><br><span class="line">认证后，</span><br><span class="line">借：应交税费——应交增值税<span class="comment">--进项税额</span></span><br><span class="line">  贷：应交税费——待抵扣增值税进项税额</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+<h5 id="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"><a href="#一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。" class="headerlink" title="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"></a>一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。</h5><h5 id="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"><a href="#二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。" class="headerlink" title="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"></a>二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。</h5><h5 id="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"><a href="#三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。" class="headerlink" title="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"></a>三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。</h5><h5 id="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"><a href="#四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。" class="headerlink" title="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"></a>四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。</h5><h5 id="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"><a href="#五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。" class="headerlink" title="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"></a>五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。</h5><h5 id="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"><a href="#六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。" class="headerlink" title="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"></a>六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。</h5>]]></content>
+  </entry>
+  <entry>
     <title>SQL1</title>
     <url>/2021/07/03/SQL1/</url>
     <content><![CDATA[<p><a href="/download/%E7%94%B5%E8%84%91%E5%8A%9E%E5%85%AC%E5%BF%AB%E6%8D%B7%E9%94%AE.docx">快捷键</a></p>
@@ -158,206 +365,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>win10建立博客</title>
-    <url>/2021/06/25/win10%E5%8D%9A%E5%AE%A2%E5%88%B6%E4%BD%9C/</url>
-    <content><![CDATA[<h6 id="建议安装markdownpad写博客文章"><a href="#建议安装markdownpad写博客文章" class="headerlink" title="建议安装markdownpad写博客文章"></a><em>建议安装markdownpad写博客文章</em></h6><hr>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="1-安装Nodejs"><a href="#1-安装Nodejs" class="headerlink" title="1.安装Nodejs"></a>1.安装Nodejs</h3><p><em><strong>win+R输入cmd</strong></em></p>
-<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- node -v <span class="comment">#查看node版本</span></span><br><span class="line">- <span class="built_in">npm</span> -v <span class="comment">#查看npm版本</span></span><br><span class="line">- <span class="built_in">npm</span> install -g cnpm--registry=http://registry.<span class="built_in">npm</span>.taobao.org <span class="comment">#安装淘宝的cnpm管理器</span></span><br><span class="line">- cnpm -v <span class="comment">#查看cnpm版本</span></span><br><span class="line">- cnpm install -g hexo-cli <span class="comment">#安装hexo框架</span></span><br><span class="line">- hexo -v <span class="comment">#查看hexo版本</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><h3 id="2-之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）"><a href="#2-之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）" class="headerlink" title="2.之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）"></a>2.之后的cmd操作确保在blog里（以下操作时有任何问题都可以直接找到建立的blog文件夹将其删除重新操作）</h3><p><em><strong>cmd里进入你想保存blog的位置（方便找）</strong></em></p>
-<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> md blog <span class="comment">#创建blog目录</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> cd blog <span class="comment">#进入blog目录</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo init <span class="comment">#生成博客并初始化</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo s <span class="comment">#启动本地博客服务</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
-
-<p><em>回应本地访问地址（复制到浏览器打开）:<a href="http://localhost:4000/">http://localhost:4000/</a></em></p>
-<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line">-<span class="ruby"> hexo n <span class="string">&quot;我的博客&quot;</span> <span class="comment">#创建新的文章</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo clean <span class="comment">#清理缓存</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> hexo g <span class="comment">#生成创建仓库</span></span></span><br><span class="line"><span class="ruby"></span>-<span class="ruby"> cnpm install --save hexo-deployer-git <span class="comment">#在blog目录下安装git部署插件</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-配置＿config-yml"><a href="#3-配置＿config-yml" class="headerlink" title="3.配置＿config.yml"></a>3.配置＿config.yml</h3><p><em><strong>用记事本打开blog-＿config文件</strong></em></p>
-<p><em><strong>最底部找到deployment，写入</strong></em></p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>type: git</span><br><span class="line"><span class="bullet">- </span>repo: http://(远程端地址）</span><br><span class="line"><span class="bullet">- </span>branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>补充：</p>
-<h6 id="远程端地址的设置"><a href="#远程端地址的设置" class="headerlink" title="远程端地址的设置"></a>远程端地址的设置</h6><ol>
-<li>打开<a href="https://github.com/">https://github.com/</a></li>
-<li>注册登录，注意：Username是之后你的博客地址的构成之一（这里以qiqiguaiguaideyingbaobei为例）</li>
-<li>点右上角加号，new repository(新建仓库qiqiguaiguaideyingbaobei.github.io)</li>
-<li>跳出页面显示地址<a href="https://github.com/qiqiguaiguaideyingbaobei/qiqiguaiguaideyingbaobei.github.io">https://github.com/qiqiguaiguaideyingbaobei/qiqiguaiguaideyingbaobei.github.io</a></li>
-<li>地址需要用到，先放一边，继续下一步操作</li>
-</ol>
-<hr>
-<h3 id="4-回到cmd"><a href="#4-回到cmd" class="headerlink" title="4.回到cmd"></a>4.回到cmd</h3><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> hexo d <span class="comment">#部署到Gittub仓库里</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
-<p>首次部署会自动跳出界面，输入密码。</p>
-<h4 id="这里出错"><a href="#这里出错" class="headerlink" title="这里出错"></a>这里出错</h4><p>自行百度</p>
-<p><em><strong>访问http://即可查看博客</strong></em> </p>
-<hr>
-<h3 id="5-主题变更"><a href="#5-主题变更" class="headerlink" title="5.主题变更"></a>5.主题变更</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- git clone http:<span class="regexp">//gi</span>thub.com<span class="regexp">/litten/</span>hexo-theme-yilia.git themes/yilia <span class="comment">#下载yilia主题到本地</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="这一步出错-范例"><a href="#这一步出错-范例" class="headerlink" title="这一步出错(范例)"></a>这一步出错(范例)</h4><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">Connection was reset, errno 10054</span><br><span class="line"><span class="keyword">error: </span>1457 bytes of body are still expected</span><br><span class="line">fetch-pack: unexpected disconnect while reading sideband packet</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: fetch-pack: invalid index-pack output</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h6 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h6><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">git config http.sslVerify <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>如果返回，</p>
-<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">fatal: <span class="keyword">not</span> <span class="keyword">in</span> <span class="keyword">a</span> git <span class="built_in">directory</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>接着输入，</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="keyword">init</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">git config http.sslVerify <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后重新clone即可。</p>
-<hr>
-<h3 id="6-修改hexo根目录下的＿config文件"><a href="#6-修改hexo根目录下的＿config文件" class="headerlink" title="6.修改hexo根目录下的＿config文件"></a>6.修改hexo根目录下的＿config文件</h3><p>找到theme，</p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>theme: yilia</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> hexo c <span class="comment">#清理</span></span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line">-<span class="ruby"> hexo g <span class="comment">#生成</span></span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line">-<span class="ruby"> hexo s <span class="comment">#生成本地页面（可跳过）</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
-
-<p>ctrl+c退出</p>
-<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> hexo d <span class="comment">#部署到远端</span></span></span><br><span class="line"><span class="ruby"></span></span><br></pre></td></tr></table></figure>
-<h4 id="hexo-d-出错"><a href="#hexo-d-出错" class="headerlink" title="hexo d 出错"></a>hexo d 出错</h4><p> ①<a href="http://https//blog.csdn.net/weixin_41256398/article/details/117994899">Hexo部署出现错误err: Error: Spawn failed解决方式</a><br>    ———-</p>
-<h3 id="7-查看博客"><a href="#7-查看博客" class="headerlink" title="7.查看博客"></a>7.<a href="https://qiqiguaiguaideyingbaobei.github.io/">查看博客</a></h3><p><a href="https://qiqiguaiguaideyingbaobei.github.io/">https://qiqiguaiguaideyingbaobei.github.io</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>科技创新类企业所得税优惠</title>
-    <url>/2021/07/14/%E4%BC%81%E4%B8%9A%E6%89%80%E5%BE%97%E7%A8%8E/</url>
-    <content><![CDATA[<p><img src="https://p3-tt.byteimg.com/origin/pgc-image/SYiDjH1COaBOQH?from=pc"></p>
-<h2 id="01-研究开发费用企业所得税"><a href="#01-研究开发费用企业所得税" class="headerlink" title="01 研究开发费用企业所得税"></a>01 研究开发费用企业所得税</h2><p><em>企业为开发新技术、新产品、新工艺</em>发生的研究开发费用,未形成无形资产计入当期损益的，在按照规定据实扣除的基础上，按照研究开发费用的<em>50％</em>加计扣除；形成无形资产的，按照无形资产成本<em>150％摊销</em>。</p>
-<p>在2018年1月1日至2023年12月31日期间，按照<em>实际发生额的75%<em>在税前加计扣除；形成无形资产的，在上述期间按照无形资产</em>成本的175%在税前摊销</em>。</p>
-<p><em>制造业企业</em>开展研发活动中实际发生的研发费用，未形成无形资产计入当期损益的，在按规定据实扣除的基础上，自2021年1月1日起，再按照<em>实际发生额的100%<em>在税前加计扣除，形成无形资产的，自2021年1月1日起，按照无形资产</em>成本的200%在税前摊销</em>。</p>
-<p>企业预缴申报2021年第3季度（按季预缴）或9月（按月预缴）企业所得税时，可以自行选择就当年上半年研发费用享受加计扣除优惠政策。</p>
-<h2 id="02-企业委托研究开发费用"><a href="#02-企业委托研究开发费用" class="headerlink" title="02 企业委托研究开发费用"></a>02 企业委托研究开发费用</h2><ol>
-<li>企业委托<em>境内</em>外部机构或个人进行研发活动所发生的费用，按照费用*实际发生额的80%*计入委托方研发费用并计算加计扣除，受托方不得再进行加计扣除。</li>
-<li>委托<em>境外</em>进行研发活动所发生的费用，按照费用实际<em>发生额的80%<em>计入委托方的委托境外研发费用。委托境外研发费用**境内符合条件的研发费用</em>三分之二的</em>部分，可以按规定在企业所得税前加计扣除。</li>
-</ol>
-<h2 id="03-国家重点扶持的高新技术企业"><a href="#03-国家重点扶持的高新技术企业" class="headerlink" title="03 国家重点扶持的高新技术企业"></a>03 国家重点扶持的高新技术企业</h2><p>减按15%的税率征收企业所得税</p>
-<h2 id="04-经认定为技术先进型服务企业"><a href="#04-经认定为技术先进型服务企业" class="headerlink" title="04 经认定为技术先进型服务企业"></a>04 经认定为技术先进型服务企业</h2><p>减按15%的税率征收企业所得税</p>
-<h2 id="05-服务贸易类技术先进型服务企业"><a href="#05-服务贸易类技术先进型服务企业" class="headerlink" title="05 服务贸易类技术先进型服务企业"></a>05 服务贸易类技术先进型服务企业</h2><p>减按15%的税率征收企业所得税</p>
-<h2 id="06-软件产业所得税优惠"><a href="#06-软件产业所得税优惠" class="headerlink" title="06 软件产业所得税优惠"></a>06 软件产业所得税优惠</h2><p>1.国家鼓励的<em>软件企业</em>,自获利年度起,第一年至第二年<em>免征</em>企业所得税,第三年至第五年按照*25%*的法定税率减半征收企业所得税。</p>
-<p>2.国家鼓励的<em>重点集成电路设计企业和软件企业</em>,自获利年度起,第一年至第五年<em>免征</em>企业所得税,接续年度减按*10%*的税率征收企业所得税。</p>
-<p>3.符合条件的软件企业的<em>职工培训费用</em>，应单独进行核算并按实际发生额在计算应纳税所得额时扣除。</p>
-<p>4.符合条件的软件企业按照《财政部国家税务总局关于软件产品增值税政策的通知》（财税〔2011〕100号）规定取得的<em>即征即退</em>增值税款，由企业专项用于软件产品研发和扩大再生产并单独进行核算，可以作为<em>不征税收入</em>，在计算应纳税所得额时从收入总额中减除。</p>
-<p>5.外购的软件，凡符合固定资产或无形资产确认条件的，可以按照固定资产或无形资产进行核算，其<em>折旧或摊销年限</em>可以适当缩短，最短可为<em>2年（含）</em>。</p>
-<h2 id="07-集成电路产业所得税优惠"><a href="#07-集成电路产业所得税优惠" class="headerlink" title="07 集成电路产业所得税优惠"></a>07 集成电路产业所得税优惠</h2><p>1.2020年1月1日起，国家鼓励的集成电路线宽小于28纳米（含），且经营期在15年以上的集成电路生产企业或项目，第一年至第十年<em>免征</em>企业所得税；国家鼓励的集成电路线宽小于65纳米（含），且经营期在15年以上的集成电路生产企业或项目，第一年至第五年<em>免征</em>企业所得税，第六年至第十年按照<em>25%<em>的法定税率</em>减半</em>征收企业所得税；国家鼓励的集成电路线宽小于130纳米（含），且经营期在10年以上的集成电路生产企业或项目，第一年至第二年<em>免征</em>企业所得税，第三年至第五年按照*25%*的法定税率减半征收企业所得税。</p>
-<p>2.2020年1月1日起，国家鼓励的线宽小于130纳米（含）的集成电路生产企业，属于国家鼓励的集成电路生产企业清单年度之前5个纳税年度发生的尚未弥补完的亏损，准予向以后年度结转，<em>总结转年限最长不得超过10年</em>。</p>
-<p>3.2020年1月1日起，国家鼓励的集成电路设计、装备、材料、封装、测试企业，自获利年度起，第一年至第二年<em>免征</em>企业所得税，第三年至第五年按照*25%*的法定税率减半征收企业所得税。</p>
-<p>4.2020年1月1日起，国家鼓励的重点集成电路设计企业，自获利年度起，第一年至第五年<em>免征</em>企业所得税，接续年度减按*10%*的税率征收企业所得税。</p>
-<p>5.集成电路设计企业<em>职工培训费用</em>，应单独进行核算并按实际发生额在计算应纳税所得额时扣除。</p>
-<p>6.外购的软件，凡符合固定资产或无形资产确认条件的，可以按照固定资产或无形资产进行核算，其折旧或摊销年限可以适当缩短，<em>最短可为2年（含）。</em></p>
-<p>7.集成电路生产企业的生产设备，其折旧年限可以适当缩短，<em>最短可为3年（含）</em>。</p>
-<h2 id="08-符合条件的动漫企业享受国家现行鼓励"><a href="#08-符合条件的动漫企业享受国家现行鼓励" class="headerlink" title="08 符合条件的动漫企业享受国家现行鼓励"></a>08 符合条件的动漫企业享受国家现行鼓励</h2><p>在2017年12月31日前自获利年度起，第一年至第二年<em>免征</em>企业所得税，第三年至第五年按照*25%*的法定税率减半征收企业所得税，并享受至期满为止。</p>
-<h2 id="09-高新技术企业或科技型中小企业"><a href="#09-高新技术企业或科技型中小企业" class="headerlink" title="09 高新技术企业或科技型中小企业"></a>09 高新技术企业或科技型中小企业</h2><p>弥补亏损年限延长至10年</p>
-<h2 id="10-技术转让所得免征、减征企业所得税"><a href="#10-技术转让所得免征、减征企业所得税" class="headerlink" title="10 技术转让所得免征、减征企业所得税"></a>10 技术转让所得免征、减征企业所得税</h2><p>居民企业转让<em>5年（含）以上</em>非独占许可使用权取得的技术转让所得，纳入享受企业所得税优惠的技术转让所得范围。居民企业的年度技术转让所得不超过500万元的部分，<em>免征</em>企业所得税；超过500万元的部分，<em>减半</em>征收企业所得税。</p>
-<h2 id="11-符合条件的非营利组织（科技企业孵化器）"><a href="#11-符合条件的非营利组织（科技企业孵化器）" class="headerlink" title="11 符合条件的非营利组织（科技企业孵化器）"></a>11 符合条件的非营利组织（科技企业孵化器）</h2><p>收入免征企业所得税</p>
-<h2 id="12-创业投资企业按投资额的一定比例抵扣应纳税所得额"><a href="#12-创业投资企业按投资额的一定比例抵扣应纳税所得额" class="headerlink" title="12 创业投资企业按投资额的一定比例抵扣应纳税所得额"></a>12 创业投资企业按投资额的一定比例抵扣应纳税所得额</h2><p>1.<em>创业投资企业</em>采取股权投资方式投资于<em>未上市的中小高</em>新技术企业<em>2年以上的</em>，可以按照其投资额的<em>70%<em>在股权持有</em>满2年</em>的当年抵扣该创业投资企业的应纳税所得额；当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
-<p>2.<em>公司制创业投资企业</em>采取股权投资方式直接投资于<em>种子期、初创期</em>科技型企业<em>满2年（24个月）</em>的，可以按照投资额的<em>70%<em>在股权持有</em>满2年</em>的当年抵扣该公司制创业投资企业的应纳税所得额；当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
-<p>3.<em>有限合伙制创业投资企业</em>采取股权投资方式投资于<em>未上市的中小高</em>新技术企业<em>2年（24个月）以上</em>，该有限合伙制创业投资企业的法人合伙人可按照其对未上市中小高新技术企业投资额的*70%*抵扣该法人合伙人从该有限合伙制创业投资企业分得的应纳税所得额，当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
-<p>4.<em>有限合伙制创业投资企业</em>采取股权投资方式直接投资于<em>种子期、初创期</em>科技型企业<em>满2年的</em>，该合伙创投企业的法人合伙人可以按照对种子期、初创期科技型企业投资额的*70%*抵扣法人合伙人从有限合伙制创业投资企业分得的所得；当年不足抵扣的，可以在以后纳税年度结转抵扣。</p>
-<h2 id="13-企业以技术成果投资入股递延纳税"><a href="#13-企业以技术成果投资入股递延纳税" class="headerlink" title="13 企业以技术成果投资入股递延纳税"></a>13 企业以技术成果投资入股递延纳税</h2><p>可选择适用递延纳税优惠政策。</p>
-<p><em>技术成果投资入股</em>，是指纳税人将技术成果所有权让渡给被投资企业、取得该企业股票（权）的行为。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>税务会计001</title>
-    <url>/2021/07/11/%E7%A8%8E%E5%8A%A1/</url>
-    <content><![CDATA[<p>1、山东升润食品有限公司为什么注销？</p>
-<h3 id="税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。"><a href="#税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。" class="headerlink" title="税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。"></a>税务会计是进行税务筹划、税金核算和纳税申报的一种会计系统。</h3><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><h4 id="1-税费核算及纳税申报"><a href="#1-税费核算及纳税申报" class="headerlink" title="1.税费核算及纳税申报"></a>1.税费核算及纳税申报</h4><h4 id="2-账目的合法合规检查"><a href="#2-账目的合法合规检查" class="headerlink" title="2.账目的合法合规检查"></a>2.账目的合法合规检查</h4><h4 id="3-应对税务需求及检查"><a href="#3-应对税务需求及检查" class="headerlink" title="3.应对税务需求及检查"></a>3.应对税务需求及检查</h4><h3 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h3><h4 id="1-会计处理、税收法规"><a href="#1-会计处理、税收法规" class="headerlink" title="1.会计处理、税收法规"></a>1.会计处理、税收法规</h4><h4 id="2-税收法规结合、会计实务应用"><a href="#2-税收法规结合、会计实务应用" class="headerlink" title="2.税收法规结合、会计实务应用"></a>2.税收法规结合、会计实务应用</h4><h3 id="企业信息"><a href="#企业信息" class="headerlink" title="企业信息"></a>企业信息</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">1</span>.公司名称：山东京博控股集团有限公司</span><br><span class="line"></span><br><span class="line"><span class="attribute">2</span>.法定代表人：马韵升</span><br><span class="line"></span><br><span class="line"><span class="attribute">3</span>.纳税人登记号：<span class="number">9137000077527826</span>X<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">4</span>.纳税人身份：一般纳税人</span><br><span class="line"></span><br><span class="line"><span class="attribute">5</span>.公司类型：其他有限责任公司</span><br><span class="line"></span><br><span class="line"><span class="attribute">6</span>.经营范围：本企业内部资本运营和资产管理；发电、供热（有效期限以许可证为准）；电力销售；机电安装、房屋建筑、钢结构、化工石油设备管道的制作和安装工程；城镇工业供水、水处理技术咨询服务；建筑材料、大豆、大米、皮棉、棉籽、短绒、办公用品、日用百货、木材、印刷品、通讯器材、电脑及耗材、化工原料（不含化学危险品、不含监控化学危险品、不含易制毒化学危险品）、有色金属、浆板、文化用纸、高分子材料、压延涂镀精密金属薄板、沥青、燃料油（不含危险品）销售；建筑材料生产及销售；机械设备、机电设备、通用五金、劳保用品、实验室玻璃器皿、阀门管件、仪器仪表、办公电器、消防器材、电子产品、通讯设备、商用厨具的采购、销售、仓储、委托管理、网上销售、技术服务、安装维修、代理服务;电子商务;化工助剂的采购、销售、代理服务(以上不含危险品)。（依法须经批准的项目，经相关部门批准后方可开展经营活动）(不得从事本地产业政策禁止和限制类项目的经营活动)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="税务会计相关工作"><a href="#税务会计相关工作" class="headerlink" title="税务会计相关工作"></a>税务会计相关工作</h3><h4 id="1-购买发票"><a href="#1-购买发票" class="headerlink" title="1.购买发票"></a>1.购买发票</h4><h5 id="（1）纸质发票和电子信息-报税盘和金税盘、营业执照"><a href="#（1）纸质发票和电子信息-报税盘和金税盘、营业执照" class="headerlink" title="（1）纸质发票和电子信息[报税盘和金税盘、营业执照]"></a>（1）纸质发票和电子信息[报税盘和金税盘、营业执照]</h5><h5 id="（1）将信息读入到开票软件"><a href="#（1）将信息读入到开票软件" class="headerlink" title="（1）将信息读入到开票软件"></a>（1）将信息读入到开票软件</h5><h4 id="2-开具发票"><a href="#2-开具发票" class="headerlink" title="2.开具发票"></a>2.开具发票</h4><h5 id="（1）开票软件中发票填开"><a href="#（1）开票软件中发票填开" class="headerlink" title="（1）开票软件中发票填开"></a>（1）开票软件中发票填开</h5><h5 id="（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）"><a href="#（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）" class="headerlink" title="（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）"></a>（2）《增值税应税货物或劳务销货清单》——详见销货清单（一张发票只能有一份清单，一份清单只能对应一张发票。票面只有清单行，没有其他商品行。防伪税控系统开具。）</h5><h4 id="3-印花税核算"><a href="#3-印花税核算" class="headerlink" title="3.印花税核算"></a>3.印花税核算</h4><h5 id="（1）书立、使用、领受印花税法所列示的"><a href="#（1）书立、使用、领受印花税法所列示的" class="headerlink" title="（1）书立、使用、领受印花税法所列示的"></a>（1）书立、使用、领受印花税法所列示的</h5><table>
-<thead>
-<tr>
-<th>税率</th>
-<th>项目</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>定额税率5元</td>
-<td><strong>营业账簿</strong>、房屋产权证、工商营业执照、商标注册证、专利证、土地使用证</td>
-</tr>
-<tr>
-<td>0.05‰</td>
-<td>借款合同</td>
-</tr>
-<tr>
-<td>0.3‰</td>
-<td><strong>购销合同</strong>、建筑安装工程承包合同、技术合同</td>
-</tr>
-<tr>
-<td>0.5‰</td>
-<td>加工承揽合同、建筑工程勘察设计合同、货物运输合同、产权转移书据、记载资金的账簿，按实收资本和资本公积的合计金额0.5‰贴花</td>
-</tr>
-<tr>
-<td>1‰</td>
-<td>财产租赁合同、仓储保管合同、财产保险合同</td>
-</tr>
-</tbody></table>
-<h5 id="（1）以购销合同中记载的金额计算"><a href="#（1）以购销合同中记载的金额计算" class="headerlink" title="（1）以购销合同中记载的金额计算"></a>（1）以购销合同中记载的金额计算</h5><h5 id="2）购销合同双方都要交"><a href="#2）购销合同双方都要交" class="headerlink" title="(2）购销合同双方都要交"></a>(2）购销合同双方都要交</h5><table>
-<thead>
-<tr>
-<th>购销合同记载</th>
-<th>计算</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>只有不含税金额</td>
-<td>按不含税金额</td>
-</tr>
-<tr>
-<td>不含税金额和增值税分别记载</td>
-<td>按不含税金额</td>
-</tr>
-<tr>
-<td>含税金额</td>
-<td>按含税金额</td>
-</tr>
-</tbody></table>
-<h5 id="（3）印花税的缴纳方法"><a href="#（3）印花税的缴纳方法" class="headerlink" title="（3）印花税的缴纳方法"></a>（3）印花税的缴纳方法</h5><table>
-<thead>
-<tr>
-<th>“三自”缴纳方式</th>
-<th>大额缴款</th>
-<th>汇总缴纳</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>—-</td>
-<td>超过500元，带着合同、公章向当地税务机关申请填写缴款书或完税证，将其中一联粘贴在凭证上或由税务机关在凭证上加注完税标记代替贴花</td>
-<td>同一种类频繁贴花，汇总缴纳期限为一个月，提前15日告知主管税务机关，一个会计年度不能变</td>
-</tr>
-</tbody></table>
-<h4 id="4-专用发票认证（抵扣联）"><a href="#4-专用发票认证（抵扣联）" class="headerlink" title="4.专用发票认证（抵扣联）"></a>4.专用发票认证（抵扣联）</h4><p>进项发票只有通过税务机关认证后才能抵扣。</p>
-<p>尽量早认证。</p>
-<p>2次认证不通过去税务机关。来不及去，当月开的票及时通知销货方在开票系统作废发票。没作废只能下月有销货方开红票冲掉，重新开票。</p>
-<h5 id="（1）网上远程认证系统自行认证"><a href="#（1）网上远程认证系统自行认证" class="headerlink" title="（1）网上远程认证系统自行认证"></a>（1）网上远程认证系统自行认证</h5><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>上传待认证发票文件</span><br><span class="line"><span class="bullet">- </span>认证查询：查询发票认证结果</span><br><span class="line"><span class="bullet">- </span>认证下载：下载认证结果和认证结果通知书</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="2-税务会计在整个认证工作流程"><a href="#2-税务会计在整个认证工作流程" class="headerlink" title="(2)税务会计在整个认证工作流程"></a>(2)税务会计在整个认证工作流程</h5><figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>抵扣联认证</span><br><span class="line"><span class="bullet">- </span>月末打印认证结果清单</span><br><span class="line"><span class="bullet">- </span>与材料会计核对当月进项税额</span><br><span class="line"><span class="bullet">- </span>装订抵扣联和认证结果清单</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="（3）需认证的发票"><a href="#（3）需认证的发票" class="headerlink" title="（3）需认证的发票"></a>（3）需认证的发票</h5><p>1.无论是一般纳税人还是小规模纳税人，首次购买的金税盘和技术服务费，这两张票千万不要勾选认证，因为可以全额抵减增值税</p>
-<p>2.一般纳税人从小规模纳税人购买的农产品取得的3%的增值税发票，我们也不要勾选，因为可以按照9%去抵扣增值税，一旦勾选，只能按照3%，相当于100万就可以少交6万</p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>增值税专用发票（含税控机动车销售统一发票和中华人民共和国税收通用缴款书）</span><br><span class="line"><span class="bullet">- </span>海关进口增值税专用缴款书</span><br><span class="line"><span class="bullet">- </span>农产品收购发票或销售发票(购货方开的)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="（4）政策动向"><a href="#（4）政策动向" class="headerlink" title="（4）政策动向"></a>（4）政策动向</h5><p>1.合并申报的税种范围包括城镇土地使用税、房产税、车船税、印花税、耕地占用税、资源税（不包括水资源税）、土地增值税、契税、环境保护税、烟叶税。</p>
-<p>城市维护建设税是增值税、消费税的附加税种，将分别与增值税、消费税合并申报，不纳入财产和行为税合并申报范围。</p>
-<p>2.发票认证的取消——信用a级增值税一般纳税人</p>
-<p>3.认证抵扣时间</p>
-<h5 id="（5）认证时考虑的因素"><a href="#（5）认证时考虑的因素" class="headerlink" title="（5）认证时考虑的因素"></a>（5）认证时考虑的因素</h5><p>1.当月购入当月销售，这些发票当月认证</p>
-<p>2.发票是否将要到期</p>
-<p>3.当月缴纳税金金额，增值税税负率</p>
-<figure class="highlight fix"><table><tr><td class="code"><pre><span class="line"><span class="attr"></span></span><br><span class="line"><span class="attr">增值税税负率</span>=<span class="string">当期应纳增值税÷当期应税销售收入</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">当期应纳增值税=当期销项税额-实际抵扣进项税额</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">实际抵扣进项税额=期初留抵进项税额+ 本期进项税额-进项转出-出口退税-期末留抵进项税额</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
-
-<p>实际税负过低，则有可能存在偷漏税问题，会引起税务监管部门的注意；从企业来讲，如果实际税负较高，企业也应该查明原因，加强纳税核算管理，避免不必要的纳税损失。</p>
-<p>其实，税负率低可以有正常理由，比如产品滞销的一些情况，有可能导致税负率低，只要和税务局如实告知就可以解决。</p>
-<p><a href="http://https//www.toutiao.com/a6978764963477324300/?channel=&source=search_tab">一文讲清2021年税负率</a></p>
-<h5 id="6-账不平，过渡科目问题"><a href="#6-账不平，过渡科目问题" class="headerlink" title="(6)账不平，过渡科目问题"></a>(6)账不平，过渡科目问题</h5><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">借：应交税费——待抵扣增值税进项税额</span><br><span class="line">  贷：银行存款</span><br><span class="line"></span><br><span class="line">认证后，</span><br><span class="line">借：应交税费——应交增值税<span class="comment">--进项税额</span></span><br><span class="line">  贷：应交税费——待抵扣增值税进项税额</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-<h5 id="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"><a href="#一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。" class="headerlink" title="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"></a>一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。</h5><h5 id="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"><a href="#二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。" class="headerlink" title="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"></a>二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。</h5><h5 id="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"><a href="#三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。" class="headerlink" title="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"></a>三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。</h5><h5 id="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"><a href="#四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。" class="headerlink" title="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"></a>四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。</h5><h5 id="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"><a href="#五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。" class="headerlink" title="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"></a>五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。</h5><h5 id="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"><a href="#六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。" class="headerlink" title="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"></a>六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。</h5>]]></content>
-  </entry>
-  <entry>
     <title>增值税政策</title>
     <url>/2021/07/12/%E5%A2%9E%E5%80%BC%E7%A8%8E%E6%94%BF%E7%AD%96/</url>
     <content><![CDATA[<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5163917/content.html">1.先进制造业申请退还增量留抵税额</a></p>
@@ -369,13 +376,6 @@
 <p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5162053/content.html">6.海南自由贸易港自用生产设备“零关税”政策</a></p>
 <p>7.社保基金</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>函数</title>
-    <url>/2021/06/29/%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<p>(1)锁定行和列：f4+enter</p>
-<p>(2)结束公式: ctrl+shift+enter</p>
-<h2 id="一、查找引用函数"><a href="#一、查找引用函数" class="headerlink" title="一、查找引用函数"></a><font color=green>一、查找引用函数</font></h2><h3 id="1-Vlookup"><a href="#1-Vlookup" class="headerlink" title="1.Vlookup"></a><font color=brown>1.Vlookup</font></h3><h4 id="Vlookup-查找值-查找范围-查找第几列-true-false"><a href="#Vlookup-查找值-查找范围-查找第几列-true-false" class="headerlink" title="Vlookup(查找值,查找范围,查找第几列,true/false)"></a><font color=blue>Vlookup(查找值,查找范围,查找第几列,true/false)</font></h4><h5 id="查找值必须在区域第一列。"><a href="#查找值必须在区域第一列。" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h3 id="2-offset"><a href="#2-offset" class="headerlink" title="2.offset"></a><font color=brown>2.offset</font></h3><h5 id="返回单元格或区域，并可以指定返回的行或列数，"><a href="#返回单元格或区域，并可以指定返回的行或列数，" class="headerlink" title="返回单元格或区域，并可以指定返回的行或列数，"></a>返回单元格或区域，并可以指定返回的行或列数，</h5><h4 id="offset-基点-行偏rows-列偏-行数-列数"><a href="#offset-基点-行偏rows-列偏-行数-列数" class="headerlink" title="offset(基点,行偏rows,列偏,行数,列数)"></a><font color=blue>offset(基点,行偏rows,列偏,行数,列数)</font></h4><h5 id="1-左-上-为负-2-row-•2-3"><a href="#1-左-上-为负-2-row-•2-3" class="headerlink" title="(1)左 上 为负    (2)row()•2-3"></a>(1)左 上 为负    (2)row()•2-3</h5><h3 id="3-match"><a href="#3-match" class="headerlink" title="3.match"></a><font color=brown>3.match</font></h3><h5 id="返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）"><a href="#返回一个值的位置（数字），可以用这个数字作为vlookup-offset-index参数使用。（小张在第二行第1列）" class="headerlink" title="返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）"></a>返回一个值的位置（数字），可以用这个数字作为vlookup/offset/index参数使用。（小张在第二行第1列）</h5><h4 id="match-查找的内容-查找范围-是否精确1-0-1"><a href="#match-查找的内容-查找范围-是否精确1-0-1" class="headerlink" title="match(查找的内容,查找范围,是否精确1/0/-1)"></a><font color=blue>match(查找的内容,查找范围,是否精确1/0/-1)</font></h4><h5 id="1-查找范围是相对的。-2-只能进行单行-单列查找。"><a href="#1-查找范围是相对的。-2-只能进行单行-单列查找。" class="headerlink" title="(1)查找范围是相对的。    (2)只能进行单行/单列查找。"></a>(1)查找范围是相对的。    (2)只能进行单行/单列查找。</h5><h3 id="4-index"><a href="#4-index" class="headerlink" title="4.index"></a><font color=brown>4.index</font></h3><h5 id="通过一个相对的位置，返回值。（第二行第1列是小张）"><a href="#通过一个相对的位置，返回值。（第二行第1列是小张）" class="headerlink" title="通过一个相对的位置，返回值。（第二行第1列是小张）"></a>通过一个相对的位置，返回值。（第二行第1列是小张）</h5><h4 id="index-查找范围-查找行位置-查找列位置"><a href="#index-查找范围-查找行位置-查找列位置" class="headerlink" title="index(查找范围,查找行位置,查找列位置)"></a><font color=blue>index(查找范围,查找行位置,查找列位置)</font></h4><h5 id="查找值必须在区域第一列。-1"><a href="#查找值必须在区域第一列。-1" class="headerlink" title="查找值必须在区域第一列。"></a>查找值必须在区域第一列。</h5><h2 id="二、文本函数"><a href="#二、文本函数" class="headerlink" title="二、文本函数"></a><font color=green>二、文本函数</font></h2><h3 id="1-left"><a href="#1-left" class="headerlink" title="1.left"></a><font color=brown>1.left</font></h3><h5 id="从文本第1个字符开始返回指定个数的字符。"><a href="#从文本第1个字符开始返回指定个数的字符。" class="headerlink" title="从文本第1个字符开始返回指定个数的字符。"></a>从文本第1个字符开始返回指定个数的字符。</h5><h4 id="left-text-个数"><a href="#left-text-个数" class="headerlink" title="left(text,个数)"></a><font color=blue>left(text,个数)</font></h4><h5 id="函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。"><a href="#函数始终将每个字节（单字节-双字节）按1个计数。个数默认为1。" class="headerlink" title="函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。"></a>函数始终将每个字节（单字节,双字节）按1个计数。个数默认为1。</h5><h3 id="2-mid"><a href="#2-mid" class="headerlink" title="2.mid"></a><font color=brown>2.mid</font></h3><h5 id="返回从指定位置开始的特定个数字符。"><a href="#返回从指定位置开始的特定个数字符。" class="headerlink" title="返回从指定位置开始的特定个数字符。"></a>返回从指定位置开始的特定个数字符。</h5><h4 id="mid-text-start-num-个数"><a href="#mid-text-start-num-个数" class="headerlink" title="mid(text,start_num,个数)"></a><font color=blue>mid(text,start_num,个数)</font></h4>]]></content>
   </entry>
   <entry>
     <title>资源分享</title>
