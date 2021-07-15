@@ -1,6 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SQL1</title>
+    <url>/2021/07/03/SQL1/</url>
+    <content><![CDATA[<p><a href="/download/%E7%94%B5%E8%84%91%E5%8A%9E%E5%85%AC%E5%BF%AB%E6%8D%B7%E9%94%AE.docx">快捷键</a></p>
+<h3 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h3><h3 id="二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）"><a href="#二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）" class="headerlink" title="二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）"></a>二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）</h3><h4 id="1、架构"><a href="#1、架构" class="headerlink" title="1、架构"></a>1、架构</h4><p>ods操作型数据库（同步业务生产过程中的所有数据）</p>
+<p>edw（企业数据库）</p>
+<p>edw_s（加密数据库）</p>
+<p>ddm（临时需要）</p>
+<h5 id="①-数据操作语言dml，"><a href="#①-数据操作语言dml，" class="headerlink" title="① 数据操作语言dml，"></a>① 数据操作语言dml，</h5><ul>
+<li>Select获取数据</li>
+<li>update更新数据</li>
+<li>Delete删除数据</li>
+<li>Insert into插入数据</li>
+</ul>
+<hr>
+<h6 id="Create-database语句"><a href="#Create-database语句" class="headerlink" title="Create database语句"></a>Create database语句</h6><p>用于创建数据库<br>语法Create database 数据库名</p>
+<h6 id="用于限制加入表的数据的类型，可以在创建表时规定约束，通过create-table语句。或者在表上创建之后，也可以通过alter-table语句。"><a href="#用于限制加入表的数据的类型，可以在创建表时规定约束，通过create-table语句。或者在表上创建之后，也可以通过alter-table语句。" class="headerlink" title="用于限制加入表的数据的类型，可以在创建表时规定约束，通过create table语句。或者在表上创建之后，也可以通过alter table语句。"></a>用于限制加入表的数据的类型，可以在创建表时规定约束，通过create table语句。或者在表上创建之后，也可以通过alter table语句。</h6><p>① not null</p>
+<p>约束强制列不接受null值。</p>
+<p>约束强制字段始终包含值，这意味着如果不向字段添加值，就无法插入新记录或者更新记录。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> p</span><br><span class="line">(列<span class="number">1</span> <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">列<span class="number">2</span> <span class="keyword">not</span> <span class="keyword">null</span>....)</span><br></pre></td></tr></table></figure>
+<p>② unique约束</p>
+<p>约束唯一标识数据库中的每条记录。</p>
+<p>unique 和primary key约束均为列或列集合提供了唯一性的保证。</p>
+<p>primary key拥有自定义的unique约束。</p>
+<p>每个表可以有多个unique约束，但是每个表只能有一个primary key约束。</p>
+<h6 id="可以用insert-into语句向空表写入数据。"><a href="#可以用insert-into语句向空表写入数据。" class="headerlink" title="可以用insert into语句向空表写入数据。"></a>可以用insert into语句向空表写入数据。</h6><p>①用于向表格中插入新的行。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Insert</span> <span class="keyword">into</span> P <span class="keyword">values</span> (值<span class="number">1</span>,值<span class="number">2.</span>....)</span><br></pre></td></tr></table></figure>
+
+<p>②也可以指定所要插入数据的列。</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Insert</span> into P(列<span class="number">1</span>,列<span class="number">2</span>...)values(值<span class="number">1</span>,值<span class="number">2</span>....)</span><br></pre></td></tr></table></figure>
+
+<p>####### Update语句</p>
+<p>用于修改表中的数据。</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Update</span> P <span class="keyword">set</span> 列名称 ＝ 新值 <span class="keyword">where</span> 列名称 ＝ 某值</span><br></pre></td></tr></table></figure>
+
+<h6 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h6><p>①用于删除表中的行。</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Delete</span> <span class="keyword">from</span> P <span class="keyword">where</span> 列名称 ＝ 值</span><br></pre></td></tr></table></figure>
+
+<p>②可以在不删除表的情况下删除所有行，这意味着表的结构，属性和索引都是完整的。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">Delete <span class="selector-tag">from</span> <span class="selector-tag">P</span>或者delete  * <span class="selector-tag">from</span> <span class="selector-tag">P</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="Create-table"><a href="#Create-table" class="headerlink" title="Create table"></a>Create table</h6><p>用于创建数据库中的表</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span>表名称</span><br><span class="line">(</span><br><span class="line">列名<span class="number">1</span> 数据类型</span><br><span class="line">列名<span class="number">2</span> 数据类型</span><br><span class="line">列名<span class="number">3</span> 数据类型....)</span><br></pre></td></tr></table></figure>
+
+<p>数据类型data_type规定了列可容纳何种数据类型</p>
+<hr>
+<h5 id="②-数据定义语言ddl，"><a href="#②-数据定义语言ddl，" class="headerlink" title="② 数据定义语言ddl，"></a>② 数据定义语言ddl，</h5><ul>
+<li>Create Database创建新数据库</li>
+<li>Alter database修改数据库</li>
+<li>Create table创建新表</li>
+<li>Alter table变更改变数据库表</li>
+<li>Drop table删除表</li>
+<li>Create index创建索引搜索键</li>
+<li>Drop index删除索引</li>
+</ul>
+<h4 id="2、表格"><a href="#2、表格" class="headerlink" title="2、表格"></a>2、表格</h4><p>命名：ods.orders</p>
+<p>ddm.shop</p>
+<h3 id="三、基础语言"><a href="#三、基础语言" class="headerlink" title="三、基础语言"></a>三、基础语言</h3><p>select 需显示的字段 from 表名 </p>
+<p>join</p>
+<p>where（条件=/between and/(not)in多选/and、or/like模糊与通配符连用）</p>
+<p>group by</p>
+<p>having</p>
+<p>order by</p>
+<p>limit</p>
+<h4 id="1-运行顺序"><a href="#1-运行顺序" class="headerlink" title="1.运行顺序"></a>1.运行顺序</h4><h4 id="2-查看字段"><a href="#2-查看字段" class="headerlink" title="2.查看字段"></a>2.查看字段</h4><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">describe</span> ddm.shop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>describe 数据库名称.表名称<br>需声明数据库时，</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">describe</span> edw_s.dsx_saler_info</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">ddm.<span class="keyword">shop </span><span class="keyword">shop</span></span><br><span class="line"><span class="keyword"></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-连接表"><a href="#3-连接表" class="headerlink" title="3.连接表"></a>3.连接表</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">join</span> ddm.shop shop</span><br><span class="line"></span><br><span class="line"><span class="attribute">on</span> 表名<span class="number">1</span>.字段<span class="number">1</span> = 表名<span class="number">2</span>.字段<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">and</span> 表名<span class="number">1</span>.字段<span class="number">2</span> = 表名<span class="number">2</span>.字段<span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>遍历匹配所有，不断向下增添。</p>
+<p>左连接left join：去除左表数据为空的数据</p>
+<p>right join、full join、inner join=join、union(全连接并去重)、union all(不去重)</p>
+<p>① join</p>
+<p>用于根据两个或多个表中的列之间的关系,从这些表中查询数据。有时为了得到完整的结果，我们需要从两个或多个的表中获取结果。</p>
+<p>主键，是一个列在这个列中的每一行的值都是唯一的，在表中每个主键的值都是唯一的。这样做的目的是在不重复每个表中的所有数据的情况下，把表间的数据交叉捆绑在一起。</p>
+<p>join,如果表中有至少一个匹配，则返回行。</p>
+<p>② Inner join内连接</p>
+<p>在表中存在至少一个匹配时，inner join关键字返回行，如果表中的行在另一个表中没有匹配，就不会列出行。</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>Inner <span class="keyword">join</span>表<span class="number">2</span> <span class="keyword">on</span> 表<span class="number">1.</span>姓名＝表<span class="number">2.</span>姓名</span><br></pre></td></tr></table></figure>
+<p>③ Left join</p>
+<p>即使右表中没有匹配，也从左边反回所有的行。</p>
+<p>在某些数据库中，left join称为left Outer join</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span> left <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 表<span class="number">1.</span>姓名＝表<span class="number">2.</span>姓名</span><br></pre></td></tr></table></figure>
+
+<p>Right join，即使左表中没有匹配，也从右边返回所有的行。</p>
+<p>full join,只要其中一个表中存在匹配，就返回行。</p>
+<h5 id="①Union"><a href="#①Union" class="headerlink" title="①Union"></a>①Union</h5><p>这个命令只会选取不同的值 </p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>union <span class="keyword">select</span><span class="params">...</span>from<span class="params">...</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="②Union-all"><a href="#②Union-all" class="headerlink" title="②Union all"></a>②Union all</h5><p>这个命令和Union几乎是等效的，不过Union all命令会列出所有的值</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>union <span class="literal">all</span> <span class="keyword">Select</span><span class="params">...</span>From<span class="params">...</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="③Select-into语句"><a href="#③Select-into语句" class="headerlink" title="③Select into语句"></a>③Select into语句</h5><figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span>  * <span class="keyword">into</span> 新表名 [<span class="keyword">In</span> externaldatabase] <span class="keyword">From</span> 旧表名</span><br><span class="line"></span><br><span class="line">其中 <span class="keyword">in</span> 子句可以用于向另一个数据库中拷贝表,也可以添加<span class="keyword">where</span>子句。</span><br></pre></td></tr></table></figure>
+
+<p>举个栗子🌰</p>
+<p>Select 表1.列1,表2.列2 into新表from 表1 Inner join 表2 on 表1.姓名＝表2.姓名</p>
+<h4 id="4-group-by"><a href="#4-group-by" class="headerlink" title="4.group by"></a>4.group by</h4><p>select后面的字段小于等于group by后面的。 </p>
+<h4 id="5-Distinct"><a href="#5-Distinct" class="headerlink" title="5.Distinct"></a>5.Distinct</h4><p>用于返回唯一不同的值，合并相同的值。</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">distinct</span>列名称<span class="keyword">from</span>表名称</span><br></pre></td></tr></table></figure>
+<h4 id="6-运算符，通配符"><a href="#6-运算符，通配符" class="headerlink" title="6.运算符，通配符"></a>6.运算符，通配符</h4><p>①</p>
+<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">①<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> firstname <span class="built_in">like</span> <span class="comment">&#x27;_eijing&#x27;从表p中选取firstname里去掉第一个字符之后是&#x27;eijing&#x27;的行</span></span><br><span class="line">②<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="built_in">like</span> <span class="comment">&#x27;[ALN]%&#x27;从表p中选取city名是以A或L或N开头的行</span></span><br><span class="line">③<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="built_in">like</span> <span class="comment">&#x27;[！ALN]%&#x27;从表p中选取city名不是以A或L或N开头的行</span></span><br></pre></td></tr></table></figure>
+
+<p>② Like</p>
+<p>用在where子句中搜索列中的指定模式。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="built_in">column_name</span>(s) <span class="keyword">From</span> <span class="built_in">table_name</span> <span class="keyword">where</span> <span class="built_in">column_name</span>(s) <span class="keyword">like</span> party</span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line">①<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="keyword">like</span> <span class="string">&#x27;N%&#x27;</span>（从表格p中选取city以N开头的行）</span><br><span class="line">②<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">&#x27;%N%&#x27;</span>（从表格p中选取city中不包含N的行）</span><br></pre></td></tr></table></figure>
+
+<p>② in操作符</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span> from<span class="params">...</span><span class="keyword">where</span>列<span class="keyword">in</span>(值<span class="number">1</span>, 值<span class="number">2.</span>..)</span><br></pre></td></tr></table></figure>
+
+<p>③ Between操作符</p>
+<p>在where子句中使用作用是选取介于两个值之间的数值范围，这个值可以是数值文本或者日期。</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span><span class="keyword">where</span>列(<span class="literal">not</span>)Between 值<span class="number">1</span> <span class="literal">and</span> 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>选取出的值，包含值1但不包含值2，不同的数据库取值方法不同。</p>
+<p>④ And &amp; or 运算符</p>
+<p>如果第一个条件和第二个条件都成立，则and运算符显示一条记录。</p>
+<p>如果第一个条件和第二个条件只有一个成立，则or运算符显示一个记录。</p>
+<p>也可以将它们结合起来，使用圆括号组成复杂的表达式。</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">from</span> P <span class="keyword">where</span> ( <span class="keyword">first</span> name ＝<span class="string">&#x27; 李&#x27;</span> <span class="keyword">or</span> <span class="keyword">first</span> name ＝ <span class="string">&#x27;张&#x27;</span> )<span class="keyword">and</span> lastname ＝ <span class="string">&#x27;三 &#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="7-Order-by语句"><a href="#7-Order-by语句" class="headerlink" title="7.Order by语句"></a>7.Order by语句</h4><p>用于根据指定的列对结果进行排序。默认按照升序asc进行排序，如果希望降序，则可以使用desc</p>
+<p>第一列中有相同的值时，第二列是以升序排列的，如果有，如果第一列中有些值是null时，情况也是这样的。</p>
+<h4 id="8-Where子句，条件。"><a href="#8-Where子句，条件。" class="headerlink" title="8.Where子句，条件。"></a>8.Where子句，条件。</h4><figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span>列名称<span class="keyword">from</span>表名称<span class="keyword">where</span> 列 运算符 值</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">①<span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> P <span class="keyword">where</span> <span class="keyword">first</span> name＝<span class="string">&#x27;&#x27;</span>张<span class="string">&#x27;&#x27;</span>也可用单引号。</span><br><span class="line"></span><br><span class="line">②<span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> P <span class="keyword">where</span> <span class="keyword">year</span> ＞ <span class="number">1965</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="9-As别名"><a href="#9-As别名" class="headerlink" title="9.As别名"></a>9.As别名</h4><p>可以为列名称和表名称指定别名。</p>
+<p>①表的As语法</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>as<span class="params">...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sas"><table><tr><td class="code"><pre><span class="line"><span class="meta">Select</span>...<span class="meta">from</span>表1 <span class="meta">as</span> p,表2 <span class="meta">as</span> <span class="meta">x</span></span><br><span class="line"><span class="meta">where</span> p.姓＝<span class="string">&#x27;脑子&#x27;</span><span class="meta">and</span> <span class="meta">x</span>.名＝<span class="string">&#x27;四&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不用上面的语法:</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from 表<span class="number">1</span>,表<span class="number">2</span></span><br><span class="line"><span class="keyword">where</span> 表<span class="number">1.</span>姓＝<span class="string">&#x27;脑子&#x27;</span><span class="literal">and</span> 表<span class="number">2.</span>名＝<span class="string">&#x27;四&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>②列的As语法</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>as<span class="params">...</span>from<span class="params">...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> 列<span class="number">1</span> <span class="keyword">as</span> A,列<span class="number">2</span> <span class="keyword">as</span> B <span class="keyword">from</span> 表</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="四、举个栗子🌰"><a href="#四、举个栗子🌰" class="headerlink" title="四、举个栗子🌰"></a>四、举个栗子🌰</h3><p>单表：select…from…where…order by…desc limit…<br>多表：select…from…as…left join…as…on…＝…</p>
+<p>说明：</p>
+<p>where条件，order by工资（按工资排序），desc是降序（默认升序），limit5（取前5）<br>as取代名（工资表as A，指将工资表用A代替），left join…on表连接（left join 工资表on工资表.姓名列＝绩效表.姓名列，指用姓名列将工资表和绩效表连接在一起）</p>
+<p>提取表中全部列：select * from表</p>
+<p>举个栗子🌰</p>
+<p>工资表1</p>
+<p>姓名    工资<br>1    4588<br>2    6999<br>3    5555</p>
+<p>工资表2</p>
+<p>姓名    奖金<br>1    123<br>2    456</p>
+<p>单表:</p>
+<p>select 工资from工资表1 where工资＞5482 order by工资desc limit2<br>（取工资按降序排的两个人的工资列）</p>
+<p>多表：</p>
+<p>select * from工资表1 as P1 left Join 工资表2 as P2 on P1.姓名＝P2.姓名<br>（用姓名列将两张表连接起来）<br>。语式不固定，有多种写法，但程序对语句的运行顺序不变，以上只是最基本的写法。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>win10建立博客</title>
     <url>/2021/06/25/win10%E5%8D%9A%E5%AE%A2%E5%88%B6%E4%BD%9C/</url>
     <content><![CDATA[<h6 id="建议安装markdownpad写博客文章"><a href="#建议安装markdownpad写博客文章" class="headerlink" title="建议安装markdownpad写博客文章"></a><em>建议安装markdownpad写博客文章</em></h6><hr>
@@ -208,163 +365,6 @@
 <h5 id="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"><a href="#一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。" class="headerlink" title="一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。"></a>一、需要按照税收法规和会计法规的规定核算和监督税款的形成、缴纳。例如应纳税所得额的调整、视同销售收入的认定等等。</h5><h5 id="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"><a href="#二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。" class="headerlink" title="二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。"></a>二、按照国家税法规定核算纳税人各税种的税款，正确编制、报送会计报表和纳税申报表；进行纳税人税务活动的分析，保证正确执行税法，维护企业的利益。</h5><h5 id="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"><a href="#三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。" class="headerlink" title="三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。"></a>三、税务会计应按照税法规定，正确计算和缴纳税款，做到不重不漏，准确无误；确保在税法规定的期限内缴纳税款，做到不拖不占，迅速缴库。</h5><h5 id="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"><a href="#四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。" class="headerlink" title="四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。"></a>四、税务会计的基本职能是对纳税人应纳税款的形成、申报、缴纳进行反映和监督。税务会计要对纳税人的纳税义务及其缴纳情况进行记录、计算、汇总，并编制出纳税申报表。</h5><h5 id="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"><a href="#五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。" class="headerlink" title="五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。"></a>五、税务会计要对纳税人纳税义务及其缴纳情况，进行控制、检查，并对违法行为加以纠正和制裁。</h5><h5 id="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"><a href="#六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。" class="headerlink" title="六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。"></a>六、企业税务会计需要在多种纳税方案中通过事先筹划，合理安排公司筹资、投资、经营、利润分配等财务活动。</h5>]]></content>
   </entry>
   <entry>
-    <title>SQL1</title>
-    <url>/2021/07/03/SQL1/</url>
-    <content><![CDATA[<p><a href="/download/%E7%94%B5%E8%84%91%E5%8A%9E%E5%85%AC%E5%BF%AB%E6%8D%B7%E9%94%AE.docx">快捷键</a></p>
-<h3 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h3><h3 id="二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）"><a href="#二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）" class="headerlink" title="二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）"></a>二、服务器（物理主机）、架构（数据库-文件夹）、表格（-excel）、字段（-excel中的列）</h3><h4 id="1、架构"><a href="#1、架构" class="headerlink" title="1、架构"></a>1、架构</h4><p>ods操作型数据库（同步业务生产过程中的所有数据）</p>
-<p>edw（企业数据库）</p>
-<p>edw_s（加密数据库）</p>
-<p>ddm（临时需要）</p>
-<h5 id="①-数据操作语言dml，"><a href="#①-数据操作语言dml，" class="headerlink" title="① 数据操作语言dml，"></a>① 数据操作语言dml，</h5><ul>
-<li>Select获取数据</li>
-<li>update更新数据</li>
-<li>Delete删除数据</li>
-<li>Insert into插入数据</li>
-</ul>
-<hr>
-<h6 id="Create-database语句"><a href="#Create-database语句" class="headerlink" title="Create database语句"></a>Create database语句</h6><p>用于创建数据库<br>语法Create database 数据库名</p>
-<h6 id="用于限制加入表的数据的类型，可以在创建表时规定约束，通过create-table语句。或者在表上创建之后，也可以通过alter-table语句。"><a href="#用于限制加入表的数据的类型，可以在创建表时规定约束，通过create-table语句。或者在表上创建之后，也可以通过alter-table语句。" class="headerlink" title="用于限制加入表的数据的类型，可以在创建表时规定约束，通过create table语句。或者在表上创建之后，也可以通过alter table语句。"></a>用于限制加入表的数据的类型，可以在创建表时规定约束，通过create table语句。或者在表上创建之后，也可以通过alter table语句。</h6><p>① not null</p>
-<p>约束强制列不接受null值。</p>
-<p>约束强制字段始终包含值，这意味着如果不向字段添加值，就无法插入新记录或者更新记录。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> p</span><br><span class="line">(列<span class="number">1</span> <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">列<span class="number">2</span> <span class="keyword">not</span> <span class="keyword">null</span>....)</span><br></pre></td></tr></table></figure>
-<p>② unique约束</p>
-<p>约束唯一标识数据库中的每条记录。</p>
-<p>unique 和primary key约束均为列或列集合提供了唯一性的保证。</p>
-<p>primary key拥有自定义的unique约束。</p>
-<p>每个表可以有多个unique约束，但是每个表只能有一个primary key约束。</p>
-<h6 id="可以用insert-into语句向空表写入数据。"><a href="#可以用insert-into语句向空表写入数据。" class="headerlink" title="可以用insert into语句向空表写入数据。"></a>可以用insert into语句向空表写入数据。</h6><p>①用于向表格中插入新的行。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Insert</span> <span class="keyword">into</span> P <span class="keyword">values</span> (值<span class="number">1</span>,值<span class="number">2.</span>....)</span><br></pre></td></tr></table></figure>
-
-<p>②也可以指定所要插入数据的列。</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Insert</span> into P(列<span class="number">1</span>,列<span class="number">2</span>...)values(值<span class="number">1</span>,值<span class="number">2</span>....)</span><br></pre></td></tr></table></figure>
-
-<p>####### Update语句</p>
-<p>用于修改表中的数据。</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Update</span> P <span class="keyword">set</span> 列名称 ＝ 新值 <span class="keyword">where</span> 列名称 ＝ 某值</span><br></pre></td></tr></table></figure>
-
-<h6 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h6><p>①用于删除表中的行。</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Delete</span> <span class="keyword">from</span> P <span class="keyword">where</span> 列名称 ＝ 值</span><br></pre></td></tr></table></figure>
-
-<p>②可以在不删除表的情况下删除所有行，这意味着表的结构，属性和索引都是完整的。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">Delete <span class="selector-tag">from</span> <span class="selector-tag">P</span>或者delete  * <span class="selector-tag">from</span> <span class="selector-tag">P</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="Create-table"><a href="#Create-table" class="headerlink" title="Create table"></a>Create table</h6><p>用于创建数据库中的表</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span>表名称</span><br><span class="line">(</span><br><span class="line">列名<span class="number">1</span> 数据类型</span><br><span class="line">列名<span class="number">2</span> 数据类型</span><br><span class="line">列名<span class="number">3</span> 数据类型....)</span><br></pre></td></tr></table></figure>
-
-<p>数据类型data_type规定了列可容纳何种数据类型</p>
-<hr>
-<h5 id="②-数据定义语言ddl，"><a href="#②-数据定义语言ddl，" class="headerlink" title="② 数据定义语言ddl，"></a>② 数据定义语言ddl，</h5><ul>
-<li>Create Database创建新数据库</li>
-<li>Alter database修改数据库</li>
-<li>Create table创建新表</li>
-<li>Alter table变更改变数据库表</li>
-<li>Drop table删除表</li>
-<li>Create index创建索引搜索键</li>
-<li>Drop index删除索引</li>
-</ul>
-<h4 id="2、表格"><a href="#2、表格" class="headerlink" title="2、表格"></a>2、表格</h4><p>命名：ods.orders</p>
-<p>ddm.shop</p>
-<h3 id="三、基础语言"><a href="#三、基础语言" class="headerlink" title="三、基础语言"></a>三、基础语言</h3><p>select 需显示的字段 from 表名 </p>
-<p>join</p>
-<p>where（条件=/between and/(not)in多选/and、or/like模糊与通配符连用）</p>
-<p>group by</p>
-<p>having</p>
-<p>order by</p>
-<p>limit</p>
-<h4 id="1-运行顺序"><a href="#1-运行顺序" class="headerlink" title="1.运行顺序"></a>1.运行顺序</h4><h4 id="2-查看字段"><a href="#2-查看字段" class="headerlink" title="2.查看字段"></a>2.查看字段</h4><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">describe</span> ddm.shop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>describe 数据库名称.表名称<br>需声明数据库时，</p>
-<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">describe</span> edw_s.dsx_saler_info</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">ddm.<span class="keyword">shop </span><span class="keyword">shop</span></span><br><span class="line"><span class="keyword"></span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-连接表"><a href="#3-连接表" class="headerlink" title="3.连接表"></a>3.连接表</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">join</span> ddm.shop shop</span><br><span class="line"></span><br><span class="line"><span class="attribute">on</span> 表名<span class="number">1</span>.字段<span class="number">1</span> = 表名<span class="number">2</span>.字段<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">and</span> 表名<span class="number">1</span>.字段<span class="number">2</span> = 表名<span class="number">2</span>.字段<span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>遍历匹配所有，不断向下增添。</p>
-<p>左连接left join：去除左表数据为空的数据</p>
-<p>right join、full join、inner join=join、union(全连接并去重)、union all(不去重)</p>
-<p>① join</p>
-<p>用于根据两个或多个表中的列之间的关系,从这些表中查询数据。有时为了得到完整的结果，我们需要从两个或多个的表中获取结果。</p>
-<p>主键，是一个列在这个列中的每一行的值都是唯一的，在表中每个主键的值都是唯一的。这样做的目的是在不重复每个表中的所有数据的情况下，把表间的数据交叉捆绑在一起。</p>
-<p>join,如果表中有至少一个匹配，则返回行。</p>
-<p>② Inner join内连接</p>
-<p>在表中存在至少一个匹配时，inner join关键字返回行，如果表中的行在另一个表中没有匹配，就不会列出行。</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>Inner <span class="keyword">join</span>表<span class="number">2</span> <span class="keyword">on</span> 表<span class="number">1.</span>姓名＝表<span class="number">2.</span>姓名</span><br></pre></td></tr></table></figure>
-<p>③ Left join</p>
-<p>即使右表中没有匹配，也从左边反回所有的行。</p>
-<p>在某些数据库中，left join称为left Outer join</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span> left <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 表<span class="number">1.</span>姓名＝表<span class="number">2.</span>姓名</span><br></pre></td></tr></table></figure>
-
-<p>Right join，即使左表中没有匹配，也从右边返回所有的行。</p>
-<p>full join,只要其中一个表中存在匹配，就返回行。</p>
-<h5 id="①Union"><a href="#①Union" class="headerlink" title="①Union"></a>①Union</h5><p>这个命令只会选取不同的值 </p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>union <span class="keyword">select</span><span class="params">...</span>from<span class="params">...</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="②Union-all"><a href="#②Union-all" class="headerlink" title="②Union all"></a>②Union all</h5><p>这个命令和Union几乎是等效的，不过Union all命令会列出所有的值</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>union <span class="literal">all</span> <span class="keyword">Select</span><span class="params">...</span>From<span class="params">...</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="③Select-into语句"><a href="#③Select-into语句" class="headerlink" title="③Select into语句"></a>③Select into语句</h5><figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span>  * <span class="keyword">into</span> 新表名 [<span class="keyword">In</span> externaldatabase] <span class="keyword">From</span> 旧表名</span><br><span class="line"></span><br><span class="line">其中 <span class="keyword">in</span> 子句可以用于向另一个数据库中拷贝表,也可以添加<span class="keyword">where</span>子句。</span><br></pre></td></tr></table></figure>
-
-<p>举个栗子🌰</p>
-<p>Select 表1.列1,表2.列2 into新表from 表1 Inner join 表2 on 表1.姓名＝表2.姓名</p>
-<h4 id="4-group-by"><a href="#4-group-by" class="headerlink" title="4.group by"></a>4.group by</h4><p>select后面的字段小于等于group by后面的。 </p>
-<h4 id="5-Distinct"><a href="#5-Distinct" class="headerlink" title="5.Distinct"></a>5.Distinct</h4><p>用于返回唯一不同的值，合并相同的值。</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">distinct</span>列名称<span class="keyword">from</span>表名称</span><br></pre></td></tr></table></figure>
-<h4 id="6-运算符，通配符"><a href="#6-运算符，通配符" class="headerlink" title="6.运算符，通配符"></a>6.运算符，通配符</h4><p>①</p>
-<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">①<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> firstname <span class="built_in">like</span> <span class="comment">&#x27;_eijing&#x27;从表p中选取firstname里去掉第一个字符之后是&#x27;eijing&#x27;的行</span></span><br><span class="line">②<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="built_in">like</span> <span class="comment">&#x27;[ALN]%&#x27;从表p中选取city名是以A或L或N开头的行</span></span><br><span class="line">③<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="built_in">like</span> <span class="comment">&#x27;[！ALN]%&#x27;从表p中选取city名不是以A或L或N开头的行</span></span><br></pre></td></tr></table></figure>
-
-<p>② Like</p>
-<p>用在where子句中搜索列中的指定模式。</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="built_in">column_name</span>(s) <span class="keyword">From</span> <span class="built_in">table_name</span> <span class="keyword">where</span> <span class="built_in">column_name</span>(s) <span class="keyword">like</span> party</span><br></pre></td></tr></table></figure>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line">①<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="keyword">like</span> <span class="string">&#x27;N%&#x27;</span>（从表格p中选取city以N开头的行）</span><br><span class="line">②<span class="keyword">Select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> city <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">&#x27;%N%&#x27;</span>（从表格p中选取city中不包含N的行）</span><br></pre></td></tr></table></figure>
-
-<p>② in操作符</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span> from<span class="params">...</span><span class="keyword">where</span>列<span class="keyword">in</span>(值<span class="number">1</span>, 值<span class="number">2.</span>..)</span><br></pre></td></tr></table></figure>
-
-<p>③ Between操作符</p>
-<p>在where子句中使用作用是选取介于两个值之间的数值范围，这个值可以是数值文本或者日期。</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span><span class="keyword">where</span>列(<span class="literal">not</span>)Between 值<span class="number">1</span> <span class="literal">and</span> 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>选取出的值，包含值1但不包含值2，不同的数据库取值方法不同。</p>
-<p>④ And &amp; or 运算符</p>
-<p>如果第一个条件和第二个条件都成立，则and运算符显示一条记录。</p>
-<p>如果第一个条件和第二个条件只有一个成立，则or运算符显示一个记录。</p>
-<p>也可以将它们结合起来，使用圆括号组成复杂的表达式。</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">from</span> P <span class="keyword">where</span> ( <span class="keyword">first</span> name ＝<span class="string">&#x27; 李&#x27;</span> <span class="keyword">or</span> <span class="keyword">first</span> name ＝ <span class="string">&#x27;张&#x27;</span> )<span class="keyword">and</span> lastname ＝ <span class="string">&#x27;三 &#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="7-Order-by语句"><a href="#7-Order-by语句" class="headerlink" title="7.Order by语句"></a>7.Order by语句</h4><p>用于根据指定的列对结果进行排序。默认按照升序asc进行排序，如果希望降序，则可以使用desc</p>
-<p>第一列中有相同的值时，第二列是以升序排列的，如果有，如果第一列中有些值是null时，情况也是这样的。</p>
-<h4 id="8-Where子句，条件。"><a href="#8-Where子句，条件。" class="headerlink" title="8.Where子句，条件。"></a>8.Where子句，条件。</h4><figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span>列名称<span class="keyword">from</span>表名称<span class="keyword">where</span> 列 运算符 值</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">①<span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> P <span class="keyword">where</span> <span class="keyword">first</span> name＝<span class="string">&#x27;&#x27;</span>张<span class="string">&#x27;&#x27;</span>也可用单引号。</span><br><span class="line"></span><br><span class="line">②<span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> P <span class="keyword">where</span> <span class="keyword">year</span> ＞ <span class="number">1965</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="9-As别名"><a href="#9-As别名" class="headerlink" title="9.As别名"></a>9.As别名</h4><p>可以为列名称和表名称指定别名。</p>
-<p>①表的As语法</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from<span class="params">...</span>as<span class="params">...</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight sas"><table><tr><td class="code"><pre><span class="line"><span class="meta">Select</span>...<span class="meta">from</span>表1 <span class="meta">as</span> p,表2 <span class="meta">as</span> <span class="meta">x</span></span><br><span class="line"><span class="meta">where</span> p.姓＝<span class="string">&#x27;脑子&#x27;</span><span class="meta">and</span> <span class="meta">x</span>.名＝<span class="string">&#x27;四&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果不用上面的语法:</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>from 表<span class="number">1</span>,表<span class="number">2</span></span><br><span class="line"><span class="keyword">where</span> 表<span class="number">1.</span>姓＝<span class="string">&#x27;脑子&#x27;</span><span class="literal">and</span> 表<span class="number">2.</span>名＝<span class="string">&#x27;四&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>②列的As语法</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span><span class="params">...</span>as<span class="params">...</span>from<span class="params">...</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> 列<span class="number">1</span> <span class="keyword">as</span> A,列<span class="number">2</span> <span class="keyword">as</span> B <span class="keyword">from</span> 表</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="四、举个栗子🌰"><a href="#四、举个栗子🌰" class="headerlink" title="四、举个栗子🌰"></a>四、举个栗子🌰</h3><p>单表：select…from…where…order by…desc limit…<br>多表：select…from…as…left join…as…on…＝…</p>
-<p>说明：</p>
-<p>where条件，order by工资（按工资排序），desc是降序（默认升序），limit5（取前5）<br>as取代名（工资表as A，指将工资表用A代替），left join…on表连接（left join 工资表on工资表.姓名列＝绩效表.姓名列，指用姓名列将工资表和绩效表连接在一起）</p>
-<p>提取表中全部列：select * from表</p>
-<p>举个栗子🌰</p>
-<p>工资表1</p>
-<p>姓名    工资<br>1    4588<br>2    6999<br>3    5555</p>
-<p>工资表2</p>
-<p>姓名    奖金<br>1    123<br>2    456</p>
-<p>单表:</p>
-<p>select 工资from工资表1 where工资＞5482 order by工资desc limit2<br>（取工资按降序排的两个人的工资列）</p>
-<p>多表：</p>
-<p>select * from工资表1 as P1 left Join 工资表2 as P2 on P1.姓名＝P2.姓名<br>（用姓名列将两张表连接起来）<br>。语式不固定，有多种写法，但程序对语句的运行顺序不变，以上只是最基本的写法。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>增值税政策</title>
     <url>/2021/07/12/%E5%A2%9E%E5%80%BC%E7%A8%8E%E6%94%BF%E7%AD%96/</url>
     <content><![CDATA[<p><a href="http://www.chinatax.gov.cn/chinatax/n359/c5163917/content.html">1.先进制造业申请退还增量留抵税额</a></p>
@@ -378,9 +378,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title>资源分享</title>
+    <title>乱</title>
     <url>/2021/06/25/%E8%B5%84%E6%BA%90/</url>
-    <content><![CDATA[<h3 id="1-颜色代码"><a href="#1-颜色代码" class="headerlink" title="1.颜色代码"></a><a href="http://www.mgzxzs.com/sytool/se.htm" title="RGB颜色查询对照表">1.颜色代码</a></h3><h3 id="2-影视推榜"><a href="#2-影视推榜" class="headerlink" title="2.影视推榜"></a><a href="http://data.guduodata.com/" title="骨朵数据">2.影视推榜</a></h3>]]></content>
+    <content><![CDATA[<h3 id="1-颜色代码"><a href="#1-颜色代码" class="headerlink" title="1.颜色代码"></a><a href="http://www.mgzxzs.com/sytool/se.htm" title="RGB颜色查询对照表">1.颜色代码</a></h3><h3 id="2-影视推榜"><a href="#2-影视推榜" class="headerlink" title="2.影视推榜"></a><a href="http://data.guduodata.com/" title="骨朵数据">2.影视推榜</a></h3><p>###3.PPT</p>
+<p><a href="https://www.ypppt.com/">优品PPT</a></p>
+<p><a href="http://www.officeplus.cn/Template/Home.shtml">微软官方</a></p>
+<p><a href="http://www.1ppt.com/">第一PPT</a></p>
+<p><a href="https://www.docer.com/">稻壳</a></p>
+<p><a href="https://slidemodel.com/">英文</a></p>
+]]></content>
   </entry>
   <entry>
     <title>财务工作001</title>
